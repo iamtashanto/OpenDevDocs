@@ -1,24 +1,14 @@
 import type { ReactNode } from "react";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
-import type { LinkItemType } from "fumadocs-ui/layouts/shared";
 import { errorsSource } from "@/app/source";
-
-const sharedLinks: LinkItemType[] = [
-  { type: "main", text: "Docs", url: "/docs" },
-  { type: "main", text: "Commands", url: "/commands" },
-  { type: "main", text: "Recipes", url: "/recipes" },
-  { type: "main", text: "Roadmaps", url: "/roadmaps" },
-  { type: "main", text: "Packages", url: "/packages" },
-  { type: "main", text: "Tools", url: "/tools" },
-];
+import { buildSharedNavLinks, sharedDocsLayoutProps } from "@/components/docs";
 
 export default function ErrorsLayout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       tree={errorsSource.pageTree}
-      nav={{ title: "⚡ OpenDevDocs", url: "/" }}
-      githubUrl="https://github.com/iamtashanto/OpenDevDocs"
-      links={sharedLinks}
+      links={buildSharedNavLinks("errors")}
+      {...sharedDocsLayoutProps}
     >
       {children}
     </DocsLayout>

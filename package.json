@@ -1,20 +1,40 @@
 {
   "name": "opendevdocs",
   "version": "0.1.0",
+  "description": "The open-source developer knowledge platform — learn technologies step-by-step, find commands quickly, solve errors, follow recipes, and move from beginner to production.",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamtashanto/OpenDevDocs"
+  },
+  "homepage": "https://docs.tashanto.com",
+  "keywords": [
+    "documentation",
+    "developer-tools",
+    "open-source",
+    "nextjs",
+    "fumadocs",
+    "markdown"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "validate-content": "node scripts/validate-content.mjs",
+    "postinstall": "node -e \"const {postInstall} = require('fumadocs-mdx/next'); postInstall().catch(console.error)\""
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "fumadocs-core": "^16.15.17",
     "fumadocs-mdx": "^15.4.5",
     "fumadocs-ui": "^16.15.17",
     "next": "16.3.8",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

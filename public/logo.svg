@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Lightning bolt — OpenDevDocs icon -->
+  <rect width="32" height="32" rx="8" fill="#1d4ed8"/>
+  <path
+    d="M18 4L10 18h8l-4 10 14-16h-8l4-8z"
+    fill="white"
+  />
+</svg>
