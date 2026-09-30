@@ -1,0 +1,20 @@
+{
+  "title": "Node.js",
+  "pages": [
+    "introduction",
+    "installation",
+    "npm-and-pnpm",
+    "package-json",
+    "modules",
+    "environment-variables",
+    "file-system",
+    "async-programming",
+    "events",
+    "streams",
+    "http-server",
+    "error-handling",
+    "process-management",
+    "logging",
+    "security"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "TypeScript",
+  "pages": [
+    "why-typescript",
+    "setup",
+    "primitive-types",
+    "arrays",
+    "objects",
+    "functions",
+    "union-types",
+    "literal-types",
+    "type-aliases",
+    "interfaces",
+    "generics",
+    "utility-types",
+    "narrowing",
+    "enums-and-alternatives",
+    "modules",
+    "tsconfig-fundamentals",
+    "common-typescript-errors"
+  ]
+}

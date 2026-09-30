@@ -1,4 +1,27 @@
 {
   "title": "React",
-  "pages": ["hooks"]
+  "pages": [
+    "introduction",
+    "project-setup",
+    "components",
+    "jsx",
+    "props",
+    "state",
+    "events",
+    "conditional-rendering",
+    "lists-and-keys",
+    "forms",
+    "use-state",
+    "use-effect",
+    "use-ref",
+    "use-memo",
+    "use-callback",
+    "custom-hooks",
+    "context",
+    "component-composition",
+    "error-boundaries",
+    "data-fetching",
+    "performance-basics",
+    "common-react-mistakes"
+  ]
 }

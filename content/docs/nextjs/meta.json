@@ -1,4 +1,34 @@
 {
   "title": "Next.js",
-  "pages": ["routing"]
+  "pages": [
+    "introduction",
+    "create-project",
+    "project-structure",
+    "app-router",
+    "layouts",
+    "pages",
+    "dynamic-routes",
+    "route-groups",
+    "link-and-navigation",
+    "server-components",
+    "client-components",
+    "data-fetching",
+    "loading-ui",
+    "error-handling",
+    "not-found",
+    "route-handlers",
+    "forms",
+    "server-actions",
+    "environment-variables",
+    "metadata",
+    "images",
+    "fonts",
+    "caching-concepts",
+    "authentication-architecture",
+    "database-integration",
+    "middleware",
+    "deployment",
+    "performance",
+    "common-errors"
+  ]
 }
