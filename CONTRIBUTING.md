@@ -4,68 +4,110 @@ Thank you for wanting to contribute! OpenDevDocs is community-driven and ~90% of
 
 ---
 
-## Adding Content
+## Content Philosophy
 
-### 1. Choose the right section
+1. **Direct and Actionable**: Provide working commands, code snippets, and direct solutions before lengthy theory.
+2. **Accurate & Tested**: Always document the tested runtime/version (e.g. Node 22, Ubuntu 24.04, Docker 27).
+3. **No Fluff**: Get straight to the point. Focus on production best practices and common edge-cases.
 
-| What you're adding | Section |
-|--------------------|---------|
-| Conceptual guide or reference | `content/docs/` |
-| CLI command reference | `content/commands/` |
-| Error fix | `content/errors/` |
-| How-to pattern | `content/recipes/` |
-| Learning path | `content/roadmaps/` |
-| Library/package docs | `content/packages/` |
-| Developer tool guide | `content/tools/` |
+---
 
-### 2. Create the Markdown file
+## Adding Documentation
 
-```
-content/<section>/<technology>/<page-name>.md
-```
+### 1. Choose the Section
 
-Example: `content/errors/javascript/cannot-read-properties-of-undefined.md`
+| What you're adding | Target Directory |
+| :--- | :--- |
+| In-depth guides & concepts | `content/docs/<category>/<topic>.md` |
+| CLI command reference | `content/commands/<tool>/<command-group>.md` |
+| Error troubleshooting & root-cause fix | `content/errors/<language>/<error-slug>.md` |
+| How-to recipe & pattern | `content/recipes/<technology>/<recipe-slug>.md` |
+| Learning path / curriculum | `content/roadmaps/<role>/<step-slug>.md` |
+| Library / package reference | `content/packages/<package-name>/<topic>.md` |
+| Developer tool guide | `content/tools/<tool-name>/<guide-slug>.md` |
 
-### 3. Required frontmatter
+---
 
-Every file **must** start with:
+## Strict Frontmatter Metadata Schema
+
+Every Markdown file must begin with YAML frontmatter conforming to our Zod schema:
 
 ```yaml
 ---
-title: Page Title Here
-description: A clear one-sentence description of what this page covers.
+title: Docker Installation on Ubuntu
+description: Install and configure Docker Engine, containerd, and Docker Compose on Ubuntu Linux.
+category: devops
+topic: docker
+type: guide
+level: beginner
+tags:
+  - docker
+  - ubuntu
+  - containers
+  - linux
+platforms:
+  - linux
+tested:
+  docker: "27.x"
+  ubuntu: "24.04"
+lastVerified: "2026-09-30"
+draft: false
 ---
 ```
 
-### 4. Validate and build
+### Allowed `type` values:
+- `guide` — Step-by-step practical walk-throughs
+- `concept` — Core architecture, mental models, and deep dives
+- `reference` — API, CLI, or configuration references
+- `tutorial` — Complete beginner-to-intermediate tutorials
+- `troubleshooting` — Root cause error solutions
+- `recipe` — Focused, production-ready code patterns
+
+### Allowed `level` values:
+- `beginner`
+- `intermediate`
+- `advanced`
+- `production`
+
+---
+
+## Local Verification Commands
+
+Before opening a pull request, run the following commands to ensure tests pass:
 
 ```bash
-pnpm validate-content   # check frontmatter
-pnpm build              # ensure no build errors
+# 1. Validate frontmatter across all files
+pnpm validate-content
+
+# 2. Run TypeScript checks
+pnpm typecheck
+
+# 3. Run ESLint
+pnpm lint
+
+# 4. Run static production build
+pnpm build
 ```
-
-### 5. Open a pull request
-
-Push your branch and open a PR. The title should follow:
-- `docs: add X guide` for new content
-- `fix: correct X error page` for corrections
-- `feat: add X component` for code changes
 
 ---
 
-## Sidebar Ordering
+## Sidebar Organization (`meta.json`)
 
-Add a `meta.json` file alongside your content to control sidebar order:
+To configure sidebar display names and ordering, add a `meta.json` file in the folder:
 
 ```json
 {
-  "title": "JavaScript",
-  "pages": ["cannot-read-properties-of-undefined", "type-error", "reference-error"]
+  "title": "Docker",
+  "pages": ["installation-ubuntu", "containers"]
 }
 ```
 
 ---
 
-## Code of Conduct
+## Pull Request Guidelines
 
-Be respectful, helpful, and constructive. We welcome contributors of all experience levels.
+1. Fork the repository and create a feature branch (`git checkout -b docs/add-docker-guide`).
+2. Commit with conventional commit messages:
+   - `docs: add docker installation guide on ubuntu`
+   - `fix: correct variable scoping example in javascript docs`
+3. Push to your fork and submit a PR to `main`.

@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  DocsPage,
-  DocsBody,
-  DocsTitle,
-  DocsDescription,
-} from "fumadocs-ui/page";
+import { DocsPage, DocsBody } from "fumadocs-ui/page";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { errorsSource } from "@/app/source";
+import { ArticleHeader } from "@/components/docs/article-header";
+import { ArticleFooter } from "@/components/docs/article-footer";
 
 export async function generateStaticParams() {
   return errorsSource.generateParams();
@@ -19,7 +16,11 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const page = errorsSource.getPage(slug);
   if (!page) notFound();
-  return { title: page.data.title, description: page.data.description };
+
+  return {
+    title: page.data.title,
+    description: page.data.description,
+  };
 }
 
 export default async function ErrorsPageRoute(
@@ -42,11 +43,28 @@ export default async function ErrorsPageRoute(
         path: `content/errors/${page.path}`,
       }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <ArticleHeader
+        title={page.data.title}
+        description={page.data.description}
+        category={page.data.category}
+        topic={page.data.topic}
+        type={page.data.type ?? "troubleshooting"}
+        level={page.data.level}
+        tags={page.data.tags}
+        platforms={page.data.platforms}
+        tested={page.data.tested}
+        lastVerified={page.data.lastVerified}
+      />
+
       <DocsBody>
         <MDXContent components={defaultMdxComponents} />
       </DocsBody>
+
+      <ArticleFooter
+        filePath={`content/errors/${page.path}`}
+        pageTitle={page.data.title}
+        tags={page.data.tags}
+      />
     </DocsPage>
   );
 }

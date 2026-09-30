@@ -1,0 +1,12 @@
+{
+  "title": "Docs",
+  "pages": [
+    "index",
+    "meta-schema",
+    "getting-started",
+    "javascript",
+    "react",
+    "nextjs",
+    "docker"
+  ]
+}
