@@ -1,4 +1,27 @@
 {
   "title": "Docker",
-  "pages": ["installation-ubuntu", "containers"]
+  "pages": [
+    "containers-vs-vms",
+    "architecture",
+    "installation",
+    "images",
+    "containers",
+    "dockerfile",
+    "build",
+    "run",
+    "ports",
+    "volumes",
+    "networks",
+    "environment-variables",
+    "logs",
+    "exec",
+    "container-lifecycle",
+    "docker-compose",
+    "multi-stage-builds",
+    "dockerignore",
+    "health-checks",
+    "resources",
+    "security",
+    "production-best-practices"
+  ]
 }

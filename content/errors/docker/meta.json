@@ -1,4 +1,10 @@
 {
-  "title": "Docker",
-  "pages": ["permission-denied"]
+  "title": "Docker Errors",
+  "pages": [
+    "port-already-allocated",
+    "permission-denied",
+    "container-exits-immediately",
+    "cannot-connect-to-database",
+    "disk-space-issues"
+  ]
 }

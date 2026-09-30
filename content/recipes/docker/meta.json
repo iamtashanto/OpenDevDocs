@@ -1,4 +1,9 @@
 {
-  "title": "Docker",
-  "pages": ["dockerize-nextjs"]
+  "title": "Docker Recipes",
+  "pages": [
+    "dockerize-nodejs",
+    "dockerize-nextjs",
+    "postgres-docker-compose",
+    "node-postgres-compose"
+  ]
 }

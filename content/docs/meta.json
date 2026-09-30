@@ -23,6 +23,7 @@
     "devops-networking",
     "git",
     "github",
-    "docker"
+    "docker",
+    "package-managers"
   ]
 }

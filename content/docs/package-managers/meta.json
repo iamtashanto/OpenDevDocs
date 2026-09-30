@@ -1,0 +1,21 @@
+{
+  "title": "Package Managers",
+  "pages": [
+    "npm",
+    "pnpm",
+    "package-json",
+    "dependencies",
+    "dev-dependencies",
+    "peer-dependencies",
+    "scripts",
+    "semantic-versioning",
+    "lock-files",
+    "node-modules",
+    "install",
+    "remove",
+    "update",
+    "outdated",
+    "audit",
+    "workspaces"
+  ]
+}
