@@ -1,0 +1,13 @@
+{
+  "title": "Commands",
+  "pages": [
+    "index",
+    "git",
+    "docker",
+    "linux",
+    "networking",
+    "pnpm",
+    "postgresql",
+    "ssh"
+  ]
+}

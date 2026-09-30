@@ -3,6 +3,7 @@
   "pages": [
     "index",
     "meta-schema",
+    "mdx-components",
     "getting-started",
     "javascript",
     "react",

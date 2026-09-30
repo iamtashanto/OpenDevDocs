@@ -4,24 +4,62 @@
  * Next.js looks for this file at the project root when MDX is enabled.
  * Components exported here are available in ALL .md and .mdx files
  * without any per-file import.
- *
- * fumadocs-ui's defaultMdxComponents are spread in first so our
- * components can override individual elements if needed.
  */
 import defaultMdxComponents from "fumadocs-ui/mdx";
-import { Callout } from "@/components/mdx/callout";
-import { Step, Steps } from "@/components/mdx/steps";
 import type { MDXComponents } from "mdx/types";
+import {
+  Callout,
+  Warning,
+  Info,
+  Tip,
+  Danger,
+  Command,
+  Terminal,
+  Step,
+  Steps,
+  CodeGroup,
+  Tab,
+  Tabs,
+  PackageManagerTabs,
+  OSTabs,
+  FileTree,
+  File,
+  Folder,
+  VersionBadge,
+  KeyboardShortcut,
+  ExpandableDetails,
+} from "@/components/mdx";
+import { Badge, Button, Kbd } from "@/components/ui";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // fumadocs-ui defaults (pre, code blocks, links, images, headings, etc.)
     ...defaultMdxComponents,
 
-    // Custom OpenDevDocs components — available in all .md/.mdx files
+    // Custom OpenDevDocs documentation components
     Callout,
+    Warning,
+    Info,
+    Tip,
+    Danger,
+    Command,
+    Terminal,
     Step,
     Steps,
+    CodeGroup,
+    Tab,
+    Tabs,
+    PackageManagerTabs,
+    OSTabs,
+    FileTree,
+    File,
+    Folder,
+    VersionBadge,
+    KeyboardShortcut,
+    ExpandableDetails,
+    Badge,
+    Button,
+    Kbd,
 
     // Spread caller overrides last so page-level components win
     ...components,

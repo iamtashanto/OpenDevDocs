@@ -9,7 +9,7 @@ import {
   toolsSource,
 } from "@/app/source";
 
-// Build a unified search index across all 7 content types at build time
+// Unified search index across all 7 collections
 export const { GET } = createSearchAPI("advanced", {
   indexes: [
     ...docsSource.getPages().map((page) => ({
@@ -17,6 +17,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Docs",
       structuredData: page.data.structuredData,
     })),
     ...commandsSource.getPages().map((page) => ({
@@ -24,6 +25,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Commands",
       structuredData: page.data.structuredData,
     })),
     ...errorsSource.getPages().map((page) => ({
@@ -31,6 +33,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Errors",
       structuredData: page.data.structuredData,
     })),
     ...recipesSource.getPages().map((page) => ({
@@ -38,6 +41,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Recipes",
       structuredData: page.data.structuredData,
     })),
     ...roadmapsSource.getPages().map((page) => ({
@@ -45,6 +49,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Roadmaps",
       structuredData: page.data.structuredData,
     })),
     ...packagesSource.getPages().map((page) => ({
@@ -52,6 +57,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Packages",
       structuredData: page.data.structuredData,
     })),
     ...toolsSource.getPages().map((page) => ({
@@ -59,6 +65,7 @@ export const { GET } = createSearchAPI("advanced", {
       title: page.data.title,
       description: page.data.description,
       url: page.url,
+      tag: "Tools",
       structuredData: page.data.structuredData,
     })),
   ],
