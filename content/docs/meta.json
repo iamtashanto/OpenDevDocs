@@ -2,10 +2,15 @@
   "title": "Docs",
   "pages": [
     "index",
+    "getting-started",
     "meta-schema",
     "mdx-components",
-    "getting-started",
+    "fundamentals",
+    "html",
+    "css",
     "javascript",
+    "git",
+    "github",
     "react",
     "nextjs",
     "docker"

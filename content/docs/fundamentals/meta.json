@@ -1,0 +1,24 @@
+{
+  "title": "Fundamentals",
+  "pages": [
+    "how-the-internet-works",
+    "client-and-server",
+    "http-and-https",
+    "urls",
+    "dns-basics",
+    "ports",
+    "localhost",
+    "ip-addresses",
+    "files-and-directories",
+    "absolute-vs-relative-paths",
+    "terminal-fundamentals",
+    "shell-fundamentals",
+    "environment-variables",
+    "processes",
+    "json",
+    "yaml",
+    "basic-regex",
+    "package-managers",
+    "debugging-fundamentals"
+  ]
+}

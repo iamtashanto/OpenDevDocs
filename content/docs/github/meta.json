@@ -1,0 +1,16 @@
+{
+  "title": "GitHub",
+  "pages": [
+    "repositories",
+    "ssh-authentication",
+    "personal-access-tokens",
+    "issues",
+    "pull-requests",
+    "fork-workflow",
+    "code-review",
+    "branch-protection",
+    "github-cli",
+    "releases",
+    "github-actions"
+  ]
+}

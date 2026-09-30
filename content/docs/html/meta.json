@@ -1,0 +1,10 @@
+{
+  "title": "HTML",
+  "pages": [
+    "introduction",
+    "document-structure",
+    "semantic-html",
+    "forms",
+    "accessibility-fundamentals"
+  ]
+}

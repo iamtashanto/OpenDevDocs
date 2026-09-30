@@ -1,0 +1,16 @@
+{
+  "title": "CSS",
+  "pages": [
+    "syntax",
+    "selectors",
+    "cascade",
+    "specificity",
+    "box-model",
+    "display",
+    "positioning",
+    "flexbox",
+    "grid",
+    "responsive-design",
+    "variables"
+  ]
+}

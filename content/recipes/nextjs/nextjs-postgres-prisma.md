@@ -65,7 +65,7 @@ Configure a production-ready PostgreSQL connection inside Next.js App Router usi
   <Step step={3} title="Configure Database Connection URL">
     Open your `.env` file and define the `DATABASE_URL`:
 
-    ```env
+    ```ini
     DATABASE_URL="postgresql://postgres:yourpassword@localhost:5432/my_app_db?schema=public"
     ```
   </Step>
