@@ -31,37 +31,40 @@ import {
 } from "@/components/mdx";
 import { Badge, Button, Kbd } from "@/components/ui";
 
+export const globalMdxComponents: MDXComponents = {
+  // fumadocs-ui defaults (pre, code blocks, links, images, headings, etc.)
+  ...defaultMdxComponents,
+
+  // Custom OpenDevDocs documentation components
+  Callout,
+  Warning,
+  Info,
+  Tip,
+  Danger,
+  Command,
+  Terminal,
+  Step,
+  Steps,
+  CodeGroup,
+  Tab,
+  Tabs,
+  PackageManagerTabs,
+  OSTabs,
+  FileTree,
+  File,
+  Folder,
+  VersionBadge,
+  KeyboardShortcut,
+  ExpandableDetails,
+  Badge,
+  Button,
+  Kbd,
+};
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // fumadocs-ui defaults (pre, code blocks, links, images, headings, etc.)
-    ...defaultMdxComponents,
-
-    // Custom OpenDevDocs documentation components
-    Callout,
-    Warning,
-    Info,
-    Tip,
-    Danger,
-    Command,
-    Terminal,
-    Step,
-    Steps,
-    CodeGroup,
-    Tab,
-    Tabs,
-    PackageManagerTabs,
-    OSTabs,
-    FileTree,
-    File,
-    Folder,
-    VersionBadge,
-    KeyboardShortcut,
-    ExpandableDetails,
-    Badge,
-    Button,
-    Kbd,
-
-    // Spread caller overrides last so page-level components win
+    ...globalMdxComponents,
     ...components,
   };
 }
+

@@ -1,0 +1,10 @@
+{
+  "title": "Recipes",
+  "pages": [
+    "index",
+    "nextjs",
+    "docker",
+    "devops",
+    "auth"
+  ]
+}

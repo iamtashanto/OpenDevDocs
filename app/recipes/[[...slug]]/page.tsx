@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DocsPage, DocsBody } from "fumadocs-ui/page";
-import defaultMdxComponents from "fumadocs-ui/mdx";
+import { globalMdxComponents } from "@/mdx-components";
 import { recipesSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
@@ -57,7 +57,7 @@ export default async function RecipesPageRoute(
       />
 
       <DocsBody>
-        <MDXContent components={defaultMdxComponents} />
+        <MDXContent components={globalMdxComponents} />
       </DocsBody>
 
       <ArticleFooter
