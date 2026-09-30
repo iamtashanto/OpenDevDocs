@@ -24,6 +24,7 @@
     "git",
     "github",
     "docker",
-    "package-managers"
+    "package-managers",
+    "tools"
   ]
 }

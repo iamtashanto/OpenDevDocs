@@ -1,0 +1,18 @@
+{
+  "title": "VS Code",
+  "pages": [
+    "installation",
+    "settings",
+    "keyboard-shortcuts",
+    "command-palette",
+    "integrated-terminal",
+    "extensions",
+    "profiles",
+    "snippets",
+    "debugging",
+    "git-integration",
+    "tasks",
+    "remote-ssh",
+    "dev-containers"
+  ]
+}

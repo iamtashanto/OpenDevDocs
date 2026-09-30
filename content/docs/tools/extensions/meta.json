@@ -1,0 +1,13 @@
+{
+  "title": "Extensions",
+  "pages": [
+    "prettier",
+    "eslint",
+    "gitlens",
+    "error-lens",
+    "tailwind-intellisense",
+    "docker",
+    "prisma",
+    "rest-client"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Developer Tools",
+  "pages": [
+    "index",
+    "vscode",
+    "extensions",
+    "api-clients",
+    "database-tools",
+    "terminal-tools",
+    "browser-devtools",
+    "chrome-extensions",
+    "git-tools"
+  ]
+}
