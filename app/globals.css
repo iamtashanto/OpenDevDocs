@@ -1,26 +1,121 @@
+/* ─── Fonts must come before @import "tailwindcss" ─────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
 @import "tailwindcss";
+@import "fumadocs-ui/style.css";
 
+/* ─── Design tokens ────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --brand-50: hsl(224, 100%, 97%);
+  --brand-100: hsl(224, 100%, 93%);
+  --brand-200: hsl(224, 96%, 85%);
+  --brand-300: hsl(224, 90%, 74%);
+  --brand-400: hsl(224, 85%, 64%);
+  --brand-500: hsl(224, 80%, 54%);
+  --brand-600: hsl(224, 76%, 44%);
+  --brand-700: hsl(224, 74%, 36%);
+  --brand-800: hsl(224, 70%, 28%);
+  --brand-900: hsl(224, 66%, 20%);
+
+  /* Accent */
+  --accent-400: hsl(280, 80%, 64%);
+  --accent-500: hsl(280, 76%, 54%);
+
+  /* Emerald highlight */
+  --emerald-400: hsl(152, 70%, 54%);
+  --emerald-500: hsl(152, 68%, 44%);
+
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Base resets ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+code, kbd, pre {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ─── Homepage hero gradient ───────────────────────────────── */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, hsl(224 80% 54% / 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, hsl(280 76% 54% / 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 20% 80%, hsl(152 70% 54% / 0.08) 0%, transparent 60%);
+}
+
+/* ─── Grid pattern ──────────────────────────────────────────── */
+.grid-pattern {
+  background-image:
+    linear-gradient(hsl(224 80% 54% / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(224 80% 54% / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Card glow on hover ────────────────────────────────────── */
+.card-glow {
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.card-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px hsl(224 80% 54% / 0.3), 0 20px 40px -12px hsl(224 80% 54% / 0.2);
+}
+
+/* ─── Animated gradient text ────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(224, 80%, 64%) 0%, hsl(280, 80%, 64%) 50%, hsl(224, 80%, 64%) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* ─── Shimmer badge ─────────────────────────────────────────── */
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, hsl(224 80% 80% / 0.3) 50%, transparent 100%);
+  animation: shimmer 2.5s ease infinite;
+}
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ─── Tag pill ──────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }

@@ -1,0 +1,11 @@
+{
+  "name": ".source",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "react-server": "./server.ts",
+      "default": "./browser.ts"
+    }
+  }
+}
