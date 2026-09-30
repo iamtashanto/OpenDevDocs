@@ -1,25 +1,25 @@
 // @ts-nocheck
 import * as __fd_glob_397 from "../content/tools/index.md?collection=tools"
-import { default as __fd_glob_396 } from "../content/recipes/nextjs/meta.json?collection=recipes"
-import { default as __fd_glob_395 } from "../content/recipes/meta.json?collection=recipes"
-import { default as __fd_glob_394 } from "../content/recipes/docker/meta.json?collection=recipes"
-import { default as __fd_glob_393 } from "../content/recipes/devops/meta.json?collection=recipes"
-import { default as __fd_glob_392 } from "../content/recipes/auth/meta.json?collection=recipes"
-import * as __fd_glob_391 from "../content/roadmaps/index.md?collection=roadmaps"
-import * as __fd_glob_390 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
-import * as __fd_glob_389 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
-import * as __fd_glob_388 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
-import * as __fd_glob_387 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
-import { default as __fd_glob_386 } from "../content/roadmaps/meta.json?collection=roadmaps"
-import { default as __fd_glob_385 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
-import { default as __fd_glob_384 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
-import { default as __fd_glob_383 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
-import { default as __fd_glob_382 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
-import * as __fd_glob_381 from "../content/recipes/nextjs/nextjs-postgres-prisma.md?collection=recipes"
-import * as __fd_glob_380 from "../content/recipes/index.md?collection=recipes"
-import * as __fd_glob_379 from "../content/recipes/docker/dockerize-nextjs.md?collection=recipes"
-import * as __fd_glob_378 from "../content/recipes/devops/nginx-reverse-proxy-ssl.md?collection=recipes"
-import * as __fd_glob_377 from "../content/recipes/auth/react-nextjs-auth-jwt.md?collection=recipes"
+import * as __fd_glob_396 from "../content/roadmaps/index.md?collection=roadmaps"
+import * as __fd_glob_395 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
+import * as __fd_glob_394 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
+import * as __fd_glob_393 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
+import * as __fd_glob_392 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
+import { default as __fd_glob_391 } from "../content/roadmaps/meta.json?collection=roadmaps"
+import { default as __fd_glob_390 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
+import { default as __fd_glob_389 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
+import { default as __fd_glob_388 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
+import { default as __fd_glob_387 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
+import * as __fd_glob_386 from "../content/recipes/nextjs/nextjs-postgres-prisma.md?collection=recipes"
+import * as __fd_glob_385 from "../content/recipes/index.md?collection=recipes"
+import * as __fd_glob_384 from "../content/recipes/docker/dockerize-nextjs.md?collection=recipes"
+import * as __fd_glob_383 from "../content/recipes/devops/nginx-reverse-proxy-ssl.md?collection=recipes"
+import * as __fd_glob_382 from "../content/recipes/auth/react-nextjs-auth-jwt.md?collection=recipes"
+import { default as __fd_glob_381 } from "../content/recipes/nextjs/meta.json?collection=recipes"
+import { default as __fd_glob_380 } from "../content/recipes/meta.json?collection=recipes"
+import { default as __fd_glob_379 } from "../content/recipes/docker/meta.json?collection=recipes"
+import { default as __fd_glob_378 } from "../content/recipes/devops/meta.json?collection=recipes"
+import { default as __fd_glob_377 } from "../content/recipes/auth/meta.json?collection=recipes"
 import * as __fd_glob_376 from "../content/packages/index.md?collection=packages"
 import * as __fd_glob_375 from "../content/errors/web/cors-policy.md?collection=errors"
 import * as __fd_glob_374 from "../content/errors/node/eaddrinuse.md?collection=errors"
@@ -413,8 +413,8 @@ export const errors = await create.docs("errors", "content/errors", {"docker/met
 
 export const packages = await create.docs("packages", "content/packages", {}, {"index.md": __fd_glob_376, });
 
-export const recipes = await create.docs("recipes", "content/recipes", {"auth/meta.json": __fd_glob_392, "devops/meta.json": __fd_glob_393, "docker/meta.json": __fd_glob_394, "meta.json": __fd_glob_395, "nextjs/meta.json": __fd_glob_396, }, {"auth/react-nextjs-auth-jwt.md": __fd_glob_377, "devops/nginx-reverse-proxy-ssl.md": __fd_glob_378, "docker/dockerize-nextjs.md": __fd_glob_379, "index.md": __fd_glob_380, "nextjs/nextjs-postgres-prisma.md": __fd_glob_381, });
+export const recipes = await create.docs("recipes", "content/recipes", {"auth/meta.json": __fd_glob_377, "devops/meta.json": __fd_glob_378, "docker/meta.json": __fd_glob_379, "meta.json": __fd_glob_380, "nextjs/meta.json": __fd_glob_381, }, {"auth/react-nextjs-auth-jwt.md": __fd_glob_382, "devops/nginx-reverse-proxy-ssl.md": __fd_glob_383, "docker/dockerize-nextjs.md": __fd_glob_384, "index.md": __fd_glob_385, "nextjs/nextjs-postgres-prisma.md": __fd_glob_386, });
 
-export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_382, "devops/meta.json": __fd_glob_383, "frontend/meta.json": __fd_glob_384, "fullstack/meta.json": __fd_glob_385, "meta.json": __fd_glob_386, }, {"backend/backend-roadmap.md": __fd_glob_387, "devops/devops-roadmap.md": __fd_glob_388, "frontend/frontend-roadmap.md": __fd_glob_389, "fullstack/fullstack-roadmap.md": __fd_glob_390, "index.md": __fd_glob_391, });
+export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_387, "devops/meta.json": __fd_glob_388, "frontend/meta.json": __fd_glob_389, "fullstack/meta.json": __fd_glob_390, "meta.json": __fd_glob_391, }, {"backend/backend-roadmap.md": __fd_glob_392, "devops/devops-roadmap.md": __fd_glob_393, "frontend/frontend-roadmap.md": __fd_glob_394, "fullstack/fullstack-roadmap.md": __fd_glob_395, "index.md": __fd_glob_396, });
 
 export const tools = await create.docs("tools", "content/tools", {}, {"index.md": __fd_glob_397, });
