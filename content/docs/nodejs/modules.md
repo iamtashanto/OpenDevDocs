@@ -1,5 +1,5 @@
 ---
-title: Node.js Modules: ESM & CommonJS
+title: "Node.js Modules: ESM & CommonJS"
 description: Master ECMAScript Modules (ESM) and CommonJS (CJS) in Node.js, native module prefixes, top-level await, and interop rules.
 category: backend
 topic: nodejs

@@ -1,5 +1,5 @@
 ---
-title: Node.js File System (node:fs)
+title: "Node.js File System (node:fs)"
 description: Read, write, and manipulate files and directories asynchronously using node:fs/promises and node:path in Node.js.
 category: backend
 topic: nodejs

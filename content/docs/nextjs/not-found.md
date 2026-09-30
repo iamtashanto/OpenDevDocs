@@ -8,7 +8,7 @@ level: beginner
 tags:
   - nextjs
   - not-found
-  - 404
+  - "404"
   - error-handling
 platforms:
   - web

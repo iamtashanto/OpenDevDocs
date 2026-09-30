@@ -1,5 +1,5 @@
 ---
-title: Node.js Event Emitter (node:events)
+title: "Node.js Event Emitter (node:events)"
 description: Build decoupled, event-driven architectures using Node.js EventEmitter, custom events, and listener management.
 category: backend
 topic: nodejs

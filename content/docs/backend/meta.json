@@ -1,0 +1,20 @@
+{
+  "title": "Backend Concepts",
+  "pages": [
+    "client-server-architecture",
+    "rest",
+    "http-methods",
+    "status-codes",
+    "request-response",
+    "headers",
+    "cookies",
+    "sessions",
+    "jwt",
+    "auth-vs-authz",
+    "cors",
+    "rate-limiting",
+    "validation",
+    "pagination",
+    "error-handling"
+  ]
+}

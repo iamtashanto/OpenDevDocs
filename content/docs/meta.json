@@ -9,10 +9,14 @@
     "html",
     "css",
     "javascript",
-    "git",
-    "github",
+    "typescript",
     "react",
     "nextjs",
+    "nodejs",
+    "backend",
+    "express",
+    "git",
+    "github",
     "docker"
   ]
 }
