@@ -1,0 +1,12 @@
+{
+  "title": "Networking for DevOps",
+  "pages": [
+    "cidr-and-subnets",
+    "routing",
+    "dns-architecture",
+    "firewalls-and-security-groups",
+    "reverse-proxies-in-production",
+    "load-balancing-strategies",
+    "container-networking"
+  ]
+}

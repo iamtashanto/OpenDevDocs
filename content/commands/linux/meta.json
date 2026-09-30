@@ -1,4 +1,31 @@
 {
   "title": "Linux",
-  "pages": ["kill-process-port"]
+  "pages": [
+    "pwd",
+    "ls",
+    "cd",
+    "mkdir",
+    "touch",
+    "cp",
+    "mv",
+    "rm",
+    "cat",
+    "less",
+    "head",
+    "tail",
+    "grep",
+    "find",
+    "chmod",
+    "chown",
+    "ps",
+    "top",
+    "kill",
+    "kill-process-port",
+    "df",
+    "du",
+    "curl",
+    "wget",
+    "ssh",
+    "scp"
+  ]
 }

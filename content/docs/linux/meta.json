@@ -1,0 +1,21 @@
+{
+  "title": "Linux",
+  "pages": [
+    "introduction",
+    "filesystem-hierarchy",
+    "navigation",
+    "files-and-directories",
+    "permissions",
+    "users-and-groups",
+    "processes",
+    "services",
+    "systemd",
+    "package-management",
+    "disk-usage",
+    "memory",
+    "networking-commands",
+    "logs",
+    "ssh",
+    "environment-variables"
+  ]
+}

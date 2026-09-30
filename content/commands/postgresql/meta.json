@@ -1,4 +1,10 @@
 {
   "title": "PostgreSQL",
-  "pages": ["dump-database"]
+  "pages": [
+    "psql-connect",
+    "create-database",
+    "dump-database",
+    "restore-database",
+    "vacuum-analyze"
+  ]
 }

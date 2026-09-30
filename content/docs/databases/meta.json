@@ -1,0 +1,16 @@
+{
+  "title": "Database Fundamentals",
+  "pages": [
+    "what-is-a-database",
+    "relational-vs-non-relational",
+    "tables",
+    "rows",
+    "columns",
+    "primary-keys",
+    "foreign-keys",
+    "relationships",
+    "normalization",
+    "indexes",
+    "transactions"
+  ]
+}

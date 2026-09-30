@@ -1,0 +1,24 @@
+{
+  "title": "PostgreSQL",
+  "pages": [
+    "installation",
+    "connecting",
+    "creating-users",
+    "creating-databases",
+    "tables",
+    "crud",
+    "where",
+    "order-by",
+    "group-by",
+    "joins",
+    "constraints",
+    "indexes",
+    "transactions",
+    "views",
+    "roles-and-permissions",
+    "backup",
+    "restore",
+    "performance",
+    "common-errors"
+  ]
+}

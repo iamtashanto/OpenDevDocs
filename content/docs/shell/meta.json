@@ -1,0 +1,15 @@
+{
+  "title": "Shell",
+  "pages": [
+    "stdin-stdout-stderr",
+    "pipes",
+    "redirection",
+    "variables",
+    "aliases",
+    "scripts",
+    "conditions",
+    "loops",
+    "functions",
+    "exit-codes"
+  ]
+}
