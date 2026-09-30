@@ -6,12 +6,16 @@ import { roadmapsSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
 
+interface PageProps {
+  params: Promise<{ slug?: string[] }>;
+}
+
 export async function generateStaticParams() {
   return roadmapsSource.generateParams();
 }
 
 export async function generateMetadata(
-  props: PageProps<"/roadmaps/[[...slug]]">
+  props: PageProps
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const page = roadmapsSource.getPage(slug);
@@ -24,7 +28,7 @@ export async function generateMetadata(
 }
 
 export default async function RoadmapsPageRoute(
-  props: PageProps<"/roadmaps/[[...slug]]">
+  props: PageProps
 ) {
   const { slug } = await props.params;
   const page = roadmapsSource.getPage(slug);

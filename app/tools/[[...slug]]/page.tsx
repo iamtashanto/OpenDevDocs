@@ -6,12 +6,16 @@ import { toolsSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
 
+interface PageProps {
+  params: Promise<{ slug?: string[] }>;
+}
+
 export async function generateStaticParams() {
   return toolsSource.generateParams();
 }
 
 export async function generateMetadata(
-  props: PageProps<"/tools/[[...slug]]">
+  props: PageProps
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const page = toolsSource.getPage(slug);
@@ -24,7 +28,7 @@ export async function generateMetadata(
 }
 
 export default async function ToolsPageRoute(
-  props: PageProps<"/tools/[[...slug]]">
+  props: PageProps
 ) {
   const { slug } = await props.params;
   const page = toolsSource.getPage(slug);

@@ -6,12 +6,16 @@ import { recipesSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
 
+interface PageProps {
+  params: Promise<{ slug?: string[] }>;
+}
+
 export async function generateStaticParams() {
   return recipesSource.generateParams();
 }
 
 export async function generateMetadata(
-  props: PageProps<"/recipes/[[...slug]]">
+  props: PageProps
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const page = recipesSource.getPage(slug);
@@ -24,7 +28,7 @@ export async function generateMetadata(
 }
 
 export default async function RecipesPageRoute(
-  props: PageProps<"/recipes/[[...slug]]">
+  props: PageProps
 ) {
   const { slug } = await props.params;
   const page = recipesSource.getPage(slug);

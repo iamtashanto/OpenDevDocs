@@ -6,12 +6,16 @@ import { packagesSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
 
+interface PageProps {
+  params: Promise<{ slug?: string[] }>;
+}
+
 export async function generateStaticParams() {
   return packagesSource.generateParams();
 }
 
 export async function generateMetadata(
-  props: PageProps<"/packages/[[...slug]]">
+  props: PageProps
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const page = packagesSource.getPage(slug);
@@ -24,7 +28,7 @@ export async function generateMetadata(
 }
 
 export default async function PackagesPageRoute(
-  props: PageProps<"/packages/[[...slug]]">
+  props: PageProps
 ) {
   const { slug } = await props.params;
   const page = packagesSource.getPage(slug);
