@@ -1,0 +1,11 @@
+{
+  "title": "Kubernetes Commands",
+  "pages": [
+    "kubectl-get",
+    "kubectl-describe",
+    "kubectl-logs",
+    "kubectl-exec",
+    "kubectl-apply",
+    "kubectl-rollout"
+  ]
+}

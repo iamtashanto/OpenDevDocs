@@ -1,0 +1,9 @@
+{
+  "title": "Kubernetes Errors",
+  "pages": [
+    "crashloopbackoff",
+    "imagepullbackoff",
+    "oomkilled",
+    "pod-pending"
+  ]
+}

@@ -28,6 +28,8 @@
     "docker",
     "package-managers",
     "tools",
-    "deployment"
+    "deployment",
+    "github-actions",
+    "kubernetes"
   ]
 }

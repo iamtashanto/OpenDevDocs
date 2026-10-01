@@ -1,0 +1,23 @@
+{
+  "title": "Kubernetes",
+  "pages": [
+    "index",
+    "architecture",
+    "cluster-and-nodes",
+    "pods",
+    "deployments",
+    "replicasets",
+    "services",
+    "configmaps",
+    "secrets",
+    "namespaces",
+    "ingress",
+    "volumes-and-storage",
+    "requests-and-limits",
+    "probes",
+    "kubectl",
+    "logs-and-exec",
+    "rollouts-and-scaling",
+    "troubleshooting"
+  ]
+}

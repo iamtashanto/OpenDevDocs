@@ -1,0 +1,17 @@
+{
+  "title": "GitHub Actions",
+  "pages": [
+    "index",
+    "workflow-syntax",
+    "events-and-triggers",
+    "jobs-and-runners",
+    "steps-and-actions",
+    "secrets-and-env",
+    "caching-and-artifacts",
+    "matrix-builds",
+    "permissions-and-security",
+    "environments-and-deployments",
+    "pull-request-checks",
+    "practical-workflows"
+  ]
+}

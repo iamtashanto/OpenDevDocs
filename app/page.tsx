@@ -105,7 +105,7 @@ export default function HomePage() {
             {/* Main Brand & Tagline */}
             <h1
               id="hero-heading"
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] max-w-4xl mx-auto mb-6"
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] max-w-4xl mx-auto mb-6 text-slate-900 dark:text-white"
             >
               OpenDevDocs
               <br />

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "fumadocs-ui/style.css";
 
+/* ─── Class-Based Dark Mode Variant for Tailwind CSS v4 ─────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─── Design Tokens & Theme Variables ──────────────────────── */
 :root {
   /* Font Families */
@@ -32,7 +35,7 @@
   --bg-tertiary: hsl(220, 16%, 94%);
   --bg-card: hsl(0, 0%, 100%);
   --bg-muted: hsl(220, 14%, 94%);
-  --bg-code: hsl(220, 14%, 95%);
+  --bg-code: hsl(220, 16%, 96%);
 
   --text-primary: hsl(222, 47%, 11%);
   --text-secondary: hsl(215, 19%, 35%);
@@ -54,7 +57,7 @@
   --bg-tertiary: hsl(224, 20%, 12%);
   --bg-card: hsl(224, 25%, 8%);
   --bg-muted: hsl(224, 20%, 13%);
-  --bg-code: hsl(224, 22%, 11%);
+  --bg-code: hsl(224, 25%, 10%);
 
   --text-primary: hsl(210, 40%, 98%);
   --text-secondary: hsl(215, 20%, 75%);
@@ -139,6 +142,7 @@ samp {
   font-feature-settings: "liga" 1, "calt" 1;
 }
 
+/* Inline Code Spans */
 :not(pre) > code {
   font-size: 0.875em;
   padding: 0.15em 0.4em;
@@ -147,6 +151,44 @@ samp {
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   font-weight: 500;
+}
+
+.dark :not(pre) > code {
+  background-color: hsl(224, 25%, 12%);
+  border-color: hsl(224, 20%, 22%);
+  color: hsl(210, 40%, 94%);
+}
+
+/* Code Blocks & Preformatted Containers */
+pre,
+figure[data-rehype-pretty-code-figure] pre,
+.nd-codeblock pre {
+  background-color: hsl(224, 32%, 7%) !important;
+  color: hsl(215, 25%, 92%) !important;
+  border: 1px solid hsl(224, 20%, 18%) !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.7 !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.25) !important;
+}
+
+pre code,
+figure[data-rehype-pretty-code-figure] code,
+.nd-codeblock code {
+  color: inherit !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Copy button & header in code blocks */
+figure[data-rehype-pretty-code-figure],
+.nd-codeblock {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
 }
 
 kbd {
@@ -234,11 +276,21 @@ kbd {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, hsl(224, 85%, 60%) 0%, hsl(265, 85%, 65%) 50%, hsl(224, 85%, 60%) 100%);
+  background: linear-gradient(135deg, hsl(224, 90%, 55%) 0%, hsl(265, 85%, 55%) 50%, hsl(224, 90%, 55%) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, hsl(220, 100%, 75%) 0%, hsl(265, 95%, 75%) 50%, hsl(220, 100%, 75%) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
 /* ─── Custom Scrollbar ──────────────────────────────────────── */
