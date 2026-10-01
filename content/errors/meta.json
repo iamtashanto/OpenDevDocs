@@ -6,6 +6,7 @@
     "node",
     "web",
     "git",
-    "docker"
+    "docker",
+    "prisma"
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "title": "Prisma",
+  "pages": [
+    "index",
+    "installation",
+    "project-setup",
+    "schema.prisma",
+    "models",
+    "relations",
+    "migrations",
+    "prisma-client",
+    "crud",
+    "filtering",
+    "pagination",
+    "transactions",
+    "environment-variables",
+    "postgresql",
+    "nextjs-integration",
+    "nodejs-integration",
+    "seeding",
+    "production-migrations",
+    "connection-management",
+    "common-errors",
+    "best-practices"
+  ]
+}

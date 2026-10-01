@@ -1,0 +1,8 @@
+{
+  "title": "Prisma Errors",
+  "pages": [
+    "p2002-unique-constraint",
+    "p2025-record-not-found",
+    "p1001-cannot-reach-database"
+  ]
+}

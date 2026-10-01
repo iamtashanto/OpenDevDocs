@@ -1,0 +1,26 @@
+{
+  "title": "Tailwind CSS",
+  "pages": [
+    "index",
+    "installation",
+    "utility-first",
+    "spacing",
+    "sizing",
+    "typography",
+    "colors",
+    "borders",
+    "flexbox",
+    "grid",
+    "responsive-design",
+    "states",
+    "dark-mode",
+    "arbitrary-values",
+    "theme-customization",
+    "reusable-patterns",
+    "nextjs-integration",
+    "react-integration",
+    "common-mistakes",
+    "performance",
+    "production-practices"
+  ]
+}

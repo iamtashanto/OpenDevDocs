@@ -1,0 +1,7 @@
+{
+  "title": "Prisma",
+  "pages": [
+    "nextjs-postgres-prisma",
+    "nodejs-postgres-prisma"
+  ]
+}

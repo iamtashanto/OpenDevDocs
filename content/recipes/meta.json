@@ -5,6 +5,7 @@
     "nextjs",
     "docker",
     "devops",
-    "auth"
+    "auth",
+    "prisma"
   ]
 }
