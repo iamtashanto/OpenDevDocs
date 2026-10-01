@@ -4,7 +4,6 @@ import { contentSections } from "@/config/site";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { SkipNav } from "@/components/ui/skip-nav";
 
 export default function NotFound() {

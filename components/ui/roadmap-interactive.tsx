@@ -3,20 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import {
-  Compass,
   CheckCircle2,
-  Circle,
   ArrowRight,
   BookOpen,
   Terminal,
   FileCode2,
   AlertTriangle,
-  Layers,
   Sparkles,
-  ExternalLink,
-  Flame,
-  ShieldCheck,
-  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 

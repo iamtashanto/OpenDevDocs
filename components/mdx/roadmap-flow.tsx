@@ -1,9 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { RoadmapCanvas } from "@/components/roadmaps/roadmap-canvas";
+import { getRoadmapBySlug } from "@/lib/roadmaps/registry";
+import { RoadmapView as RoadmapViewComponent } from "@/components/roadmaps/roadmap-view";
 
-export function RoadmapView({ trackId }: { trackId?: string }) {
-  return <RoadmapCanvas initialRoadmapSlug={trackId || "frontend"} />;
+export function RoadmapView({ trackId = "frontend" }: { trackId?: string }) {
+  const roadmap = getRoadmapBySlug(trackId) || getRoadmapBySlug("frontend");
+  if (!roadmap) return null;
+  return <RoadmapViewComponent roadmap={roadmap} />;
 }
+
+
 

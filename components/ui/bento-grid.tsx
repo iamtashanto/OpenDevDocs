@@ -3,20 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import {
-  Code2,
   Terminal,
-  Zap,
   CheckCircle2,
   Layers,
   ArrowRight,
   GitPullRequest,
-  Cpu,
-  BookOpen,
-  FileCode,
   Shield,
-  Activity,
   Boxes,
-  Database,
 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Badge } from "@/components/ui/badge";

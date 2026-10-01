@@ -15,7 +15,6 @@ import {
   Users,
   Star,
   Globe,
-  Scale,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { comparisonList } from "@/lib/vs-data";
@@ -31,7 +30,6 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { SearchButton } from "@/components/ui/search-button";
 import { SkipNav } from "@/components/ui/skip-nav";
 import { GithubIcon } from "@/components/ui/icons";

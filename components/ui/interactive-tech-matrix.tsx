@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Layers, Sparkles, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 
 type TechCategory = "all" | "frontend" | "backend" | "devops" | "database" | "tools";
 

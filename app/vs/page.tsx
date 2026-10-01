@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Scale, Sparkles, CheckCircle2, Zap, Layers } from "lucide-react";
+import { ArrowRight, Scale } from "lucide-react";
 import { comparisonList } from "@/lib/vs-data";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";

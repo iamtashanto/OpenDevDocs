@@ -8,12 +8,8 @@ import {
   CheckCircle2,
   Zap,
   BookOpen,
-  Terminal,
-  FileCode2,
-  AlertTriangle,
   Code2,
   TrendingUp,
-  Cpu,
   Layers,
 } from "lucide-react";
 import { comparisonList } from "@/lib/vs-data";

@@ -1,0 +1,11 @@
+{
+  "title": "Angular",
+  "pages": [
+    "angular-overview",
+    "components",
+    "signals",
+    "routing",
+    "forms",
+    "http-client"
+  ]
+}

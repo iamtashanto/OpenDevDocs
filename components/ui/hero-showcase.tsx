@@ -4,18 +4,14 @@ import * as React from "react";
 import Link from "next/link";
 import {
   Code2,
-  Terminal,
   Copy,
   Check,
-  Zap,
   Play,
   ArrowRight,
   ShieldCheck,
   Server,
   Database,
   Globe,
-  Layers,
-  Cpu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -42,7 +38,7 @@ interface StudioPreset {
   code: string;
 }
 
-function HighlightedCode({ code, language }: { code: string; language: string }) {
+function HighlightedCode({ code }: { code: string }) {
   const lines = code.split("\n");
 
   const highlightLine = (line: string) => {
@@ -518,7 +514,7 @@ export function HeroShowcase() {
 
               {/* Code Window with Multi-color Syntax Tokens */}
               <div className="rounded-xl bg-zinc-50 dark:bg-[#0c0c0e] border border-zinc-200/80 dark:border-zinc-800/80 p-3 font-mono text-xs leading-relaxed max-h-[300px] overflow-x-auto text-zinc-800 dark:text-zinc-200 select-text">
-                <HighlightedCode code={currentPreset.code} language={currentPreset.language} />
+                <HighlightedCode code={currentPreset.code} />
               </div>
             </div>
 
