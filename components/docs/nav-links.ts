@@ -30,4 +30,7 @@ export const sharedDocsLayoutProps = {
     url: "/",
   },
   githubUrl: siteConfig.github,
+  themeSwitch: {
+    mode: "light-dark-system",
+  },
 } as const;

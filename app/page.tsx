@@ -61,53 +61,65 @@ const quickStartTracks = [
   {
     title: "Web Fundamentals",
     category: "Beginner Track",
+    level: "Foundational",
+    guidesCount: "24 Guides",
     description: "HTML5 semantic structure, modern CSS flexbox & grid, and JavaScript ES6+ execution models.",
     href: "/docs",
-    icon: <Code2 className="size-5" />,
+    icon: <Code2 className="size-4" />,
     color: "blue" as const,
+    topics: ["HTML5 Semantics", "CSS Grid & Flexbox", "ES6+ Runtime", "DOM Manipulation"],
   },
   {
     title: "React & Next.js",
     category: "Frontend & Full Stack",
+    level: "Production",
+    guidesCount: "42 Guides",
     description: "Component lifecycle, state hooks, Server Actions, App Router routing, and SSR performance.",
     href: "/docs",
-    icon: <Layers className="size-5" />,
+    icon: <Layers className="size-4" />,
     color: "purple" as const,
+    topics: ["Server Actions", "App Router", "Streaming SSR", "React Hooks"],
   },
   {
     title: "Backend & Databases",
     category: "Server Engineering",
+    level: "Intermediate",
+    guidesCount: "36 Guides",
     description: "REST & GraphQL APIs, Node.js runtimes, PostgreSQL schemas, indexing, and authentication.",
     href: "/docs",
-    icon: <Cpu className="size-5" />,
+    icon: <Cpu className="size-4" />,
     color: "emerald" as const,
+    topics: ["Node.js Runtimes", "REST & GraphQL", "PostgreSQL Pool", "JWT & Sessions"],
   },
   {
     title: "Linux & DevOps",
     category: "Infrastructure",
+    level: "Advanced",
+    guidesCount: "28 Guides",
     description: "Docker multi-stage builds, shell automation, Nginx reverse proxies, and CI/CD pipelines.",
     href: "/docs",
-    icon: <Zap className="size-5" />,
+    icon: <Zap className="size-4" />,
     color: "amber" as const,
+    topics: ["Multi-stage Docker", "Nginx HTTP/3", "Shell Automation", "CI/CD Pipelines"],
   },
 ];
 
 const colorMap = {
   blue: {
-    iconBg: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
-    hoverBorder: "hover:border-blue-500/40 dark:hover:border-blue-500/40",
+    iconBg: "bg-blue-500/10 text-blue-400 border border-blue-500/20",
+    hoverBorder: "hover:border-blue-500/50",
   },
   purple: {
-    iconBg: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
-    hoverBorder: "hover:border-purple-500/40 dark:hover:border-purple-500/40",
+    iconBg: "bg-purple-500/10 text-purple-400 border border-purple-500/20",
+    hoverBorder: "hover:border-purple-500/50",
   },
   emerald: {
-    iconBg: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-    hoverBorder: "hover:border-emerald-500/40 dark:hover:border-emerald-500/40",
+    iconBg: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
+    hoverBorder: "hover:border-emerald-500/50",
   },
   amber: {
-    iconBg: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-    hoverBorder: "hover:border-amber-500/40 dark:hover:border-amber-500/40",
+    iconBg: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
+    hoverBorder: "hover:border-amber-500/50",
   },
 };
 
@@ -249,35 +261,52 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {quickStartTracks.map((track) => {
               const colors = colorMap[track.color];
               return (
                 <Link
                   key={track.title}
                   href={track.href}
-                  className={`group relative flex flex-col justify-between p-6 rounded-2xl border border-slate-200/70 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/40 backdrop-blur-sm ${colors.hoverBorder} card-interactive card-gradient-border`}
+                  className={`group relative flex flex-col justify-between p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-[#0c0c0e] transition-all duration-300 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-xl hover:shadow-blue-500/5 ${colors.hoverBorder}`}
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`p-2.5 rounded-xl ${colors.iconBg} ring-1 ring-inset ring-current/10`}>
+                    <div className="flex items-center justify-between mb-3.5">
+                      <div className={`p-2 rounded-xl ${colors.iconBg}`}>
                         {track.icon}
                       </div>
-                      <Badge variant="secondary" size="sm" className="text-[10px]">
-                        {track.category}
-                      </Badge>
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-medium">
+                        {track.level}
+                      </span>
                     </div>
-                    <h3 className="font-semibold text-base text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+
+                    <h3 className="font-bold text-base text-zinc-900 dark:text-zinc-100 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors mb-1.5">
                       {track.title}
                     </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-2">
                       {track.description}
                     </p>
+
+                    {/* Topic Chips */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {track.topics.map((topic) => (
+                        <span
+                          key={topic}
+                          className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-zinc-100 dark:bg-zinc-900/90 text-zinc-700 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-800/60"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-sm font-semibold text-blue-600 dark:text-blue-400">
-                    <span>Start track</span>
-                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+                    <span className="text-zinc-400 dark:text-zinc-500 font-mono text-[11px] font-normal">
+                      {track.guidesCount}
+                    </span>
+                    <span className="inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                      Start track <ArrowRight className="size-3.5" />
+                    </span>
                   </div>
                 </Link>
               );

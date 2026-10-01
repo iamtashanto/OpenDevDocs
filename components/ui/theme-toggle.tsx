@@ -1,66 +1,124 @@
 "use client";
 
 import * as React from "react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Laptop } from "lucide-react";
 import { useTheme } from "fumadocs-ui/provider/base";
 import { cn } from "@/lib/utils";
 
 export interface ThemeToggleProps {
   className?: string;
-  size?: "sm" | "default";
+  variant?: "segmented" | "button";
 }
 
 const emptySubscribe = () => () => {};
 
 /**
- * Accessible theme switcher button (Light / Dark).
+ * Accessible, 3-mode theme switcher (Light / Dark / System)
  * Safe from hydration mismatches without cascading render effects.
  */
-export function ThemeToggle({ className, size = "default" }: ThemeToggleProps) {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+export function ThemeToggle({ className, variant = "segmented" }: ThemeToggleProps) {
+  const { theme, setTheme } = useTheme();
   const mounted = React.useSyncExternalStore(
     emptySubscribe,
     () => true,
     () => false
   );
 
-  const isDark = mounted ? (resolvedTheme === "dark" || theme === "dark") : false;
+  const currentTheme = mounted ? (theme || "system") : "system";
 
-  const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark");
-  };
+  if (variant === "button") {
+    // Cycle button mode
+    const cycleTheme = () => {
+      if (currentTheme === "light") setTheme("dark");
+      else if (currentTheme === "dark") setTheme("system");
+      else setTheme("light");
+    };
 
+    return (
+      <button
+        type="button"
+        onClick={cycleTheme}
+        aria-label={`Current theme: ${currentTheme}. Click to switch theme.`}
+        title={`Theme: ${currentTheme}`}
+        className={cn(
+          "relative inline-flex items-center justify-center size-9 rounded-xl border",
+          "border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80",
+          "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100",
+          "hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer",
+          className
+        )}
+      >
+        {currentTheme === "light" && <Sun className="size-4 text-amber-500" />}
+        {currentTheme === "dark" && <Moon className="size-4 text-blue-400" />}
+        {currentTheme === "system" && <Laptop className="size-4 text-zinc-400" />}
+      </button>
+    );
+  }
+
+  // 3-Option Segmented Pill (Light / Dark / System)
   return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    <div
+      role="radiogroup"
+      aria-label="Select color theme"
       className={cn(
-        "relative inline-flex items-center justify-center rounded-lg border",
-        "border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80",
-        "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100",
-        "hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950",
-        size === "sm" ? "h-8 w-8" : "h-9 w-9",
+        "inline-flex items-center p-0.5 rounded-xl border",
+        "border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-md",
         className
       )}
     >
-      <Sun
+      {/* Light Option */}
+      <button
+        type="button"
+        role="radio"
+        aria-checked={currentTheme === "light"}
+        onClick={() => setTheme("light")}
+        title="Light theme"
+        aria-label="Light theme"
         className={cn(
-          "size-4 transition-all duration-200",
-          mounted && isDark ? "scale-0 rotate-90 hidden" : "scale-100 rotate-0 block"
+          "relative flex items-center justify-center size-7 rounded-lg transition-all cursor-pointer",
+          currentTheme === "light"
+            ? "bg-white text-zinc-900 shadow-sm"
+            : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
         )}
-        aria-hidden="true"
-      />
-      <Moon
+      >
+        <Sun className="size-3.5" />
+      </button>
+
+      {/* Dark Option */}
+      <button
+        type="button"
+        role="radio"
+        aria-checked={currentTheme === "dark"}
+        onClick={() => setTheme("dark")}
+        title="Dark theme"
+        aria-label="Dark theme"
         className={cn(
-          "size-4 transition-all duration-200",
-          mounted && isDark ? "scale-100 rotate-0 block" : "scale-0 -rotate-90 hidden"
+          "relative flex items-center justify-center size-7 rounded-lg transition-all cursor-pointer",
+          currentTheme === "dark"
+            ? "bg-zinc-800 text-white shadow-sm"
+            : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
         )}
-        aria-hidden="true"
-      />
-      <span className="sr-only">Toggle theme</span>
-    </button>
+      >
+        <Moon className="size-3.5" />
+      </button>
+
+      {/* System Option */}
+      <button
+        type="button"
+        role="radio"
+        aria-checked={currentTheme === "system"}
+        onClick={() => setTheme("system")}
+        title="System default theme"
+        aria-label="System default theme"
+        className={cn(
+          "relative flex items-center justify-center size-7 rounded-lg transition-all cursor-pointer",
+          currentTheme === "system"
+            ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm"
+            : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
+        )}
+      >
+        <Laptop className="size-3.5" />
+      </button>
+    </div>
   );
 }

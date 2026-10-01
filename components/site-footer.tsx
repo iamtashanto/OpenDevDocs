@@ -9,7 +9,7 @@ export function SiteFooter() {
   return (
     <footer
       role="contentinfo"
-      className="w-full border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-950/80 text-slate-600 dark:text-slate-400 text-sm transition-colors"
+      className="w-full border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-[#09090b] text-zinc-600 dark:text-zinc-400 text-sm transition-colors"
     >
       {/* Gradient accent line at top */}
       <div

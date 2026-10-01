@@ -44,7 +44,7 @@ export function SiteHeader() {
   return (
     <header
       role="banner"
-      className="sticky top-0 z-40 w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-950/60 transition-colors"
+      className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-xl transition-colors"
     >
       <div className="container-site flex h-16 items-center justify-between gap-4">
         {/* Left: Brand Logo & Title */}

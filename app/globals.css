@@ -262,11 +262,7 @@ kbd {
 }
 
 .dark .hero-section {
-  background: linear-gradient(180deg,
-    hsl(224, 40%, 4%) 0%,
-    hsl(224, 30%, 6%) 50%,
-    hsl(224, 30%, 6%) 100%
-  );
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(240, 10%, 8%), hsl(240, 10%, 3.9%));
 }
 
 /* ─── Hero Visual Layer (absolute positioned container) ────── */
