@@ -75,9 +75,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head />
-      <body className="font-sans antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <body className="font-sans antialiased bg-white dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 min-h-screen">
         <SkipNav />
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            links: [
+              ["📖 All Documentation Guides", "/docs"],
+              ["⚡ CLI Commands Reference", "/commands"],
+              ["🛡️ Common Errors & Solutions", "/errors"],
+              ["🍳 Production Recipes", "/recipes"],
+              ["🗺️ Developer Roadmaps", "/roadmaps"],
+              ["🛠️ Developer Tools & Git", "/tools"],
+            ],
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );

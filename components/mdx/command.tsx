@@ -36,7 +36,7 @@ export function Command({
     <div
       className={cn(
         "group relative my-4 flex items-center justify-between gap-3 p-3 sm:px-4 rounded-xl border",
-        "border-slate-800 bg-slate-950 text-slate-100 shadow-sm",
+        "border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-[#0c0c0e] text-slate-900 dark:text-zinc-100 shadow-sm",
         className
       )}
       {...props}
@@ -45,12 +45,12 @@ export function Command({
         tabIndex={0}
         role="region"
         aria-label="Command snippet"
-        className="flex items-center gap-2.5 min-w-0 font-mono text-xs sm:text-sm overflow-x-auto select-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 rounded"
+        className="flex items-center gap-2.5 min-w-0 font-mono text-xs sm:text-sm overflow-x-auto select-all focus-visible:outline-none rounded"
       >
-        <span className="text-slate-500 select-none font-bold shrink-0">
+        <span className="text-slate-400 dark:text-zinc-500 select-none font-bold shrink-0">
           {prompt}
         </span>
-        <code className="text-slate-100">{children}</code>
+        <code className="text-slate-900 dark:text-zinc-100 font-medium">{children}</code>
       </div>
 
       <button
@@ -60,9 +60,9 @@ export function Command({
         title="Copy command"
         className={cn(
           "inline-flex items-center justify-center size-7 rounded-md shrink-0",
-          "border border-slate-700/60 bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
-          copied && "text-emerald-400 border-emerald-500/40 bg-emerald-950/40"
+          "border border-slate-200 dark:border-zinc-700/80 bg-white dark:bg-zinc-800/80 text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-zinc-700 transition-colors",
+          "focus-visible:outline-none",
+          copied && "text-emerald-600 dark:text-emerald-400 border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/40"
         )}
       >
         {copied ? (

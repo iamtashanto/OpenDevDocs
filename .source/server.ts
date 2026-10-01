@@ -499,16 +499,16 @@ import { default as __fd_glob_135 } from "../content/docs/databases/meta.json?co
 import { default as __fd_glob_134 } from "../content/docs/css/meta.json?collection=docs"
 import { default as __fd_glob_133 } from "../content/docs/cloudflare/meta.json?collection=docs"
 import { default as __fd_glob_132 } from "../content/docs/backend/meta.json?collection=docs"
-import * as __fd_glob_131 from "../content/roadmaps/index.md?collection=roadmaps"
-import * as __fd_glob_130 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
-import * as __fd_glob_129 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
-import * as __fd_glob_128 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
-import * as __fd_glob_127 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
-import { default as __fd_glob_126 } from "../content/roadmaps/meta.json?collection=roadmaps"
-import { default as __fd_glob_125 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
-import { default as __fd_glob_124 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
-import { default as __fd_glob_123 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
-import { default as __fd_glob_122 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
+import { default as __fd_glob_131 } from "../content/roadmaps/meta.json?collection=roadmaps"
+import { default as __fd_glob_130 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
+import { default as __fd_glob_129 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
+import { default as __fd_glob_128 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
+import { default as __fd_glob_127 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
+import * as __fd_glob_126 from "../content/roadmaps/index.md?collection=roadmaps"
+import * as __fd_glob_125 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
+import * as __fd_glob_124 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
+import * as __fd_glob_123 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
+import * as __fd_glob_122 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
 import * as __fd_glob_121 from "../content/recipes/prisma/nodejs-postgres-prisma.md?collection=recipes"
 import * as __fd_glob_120 from "../content/recipes/prisma/nextjs-postgres-prisma.md?collection=recipes"
 import * as __fd_glob_119 from "../content/recipes/nextjs/nextjs-postgres-prisma.md?collection=recipes"
@@ -649,6 +649,6 @@ export const packages = await create.docs("packages", "content/packages", {"meta
 
 export const recipes = await create.docs("recipes", "content/recipes", {"auth/meta.json": __fd_glob_88, "devops/meta.json": __fd_glob_89, "docker/meta.json": __fd_glob_90, "github-actions/meta.json": __fd_glob_91, "kubernetes/meta.json": __fd_glob_92, "meta.json": __fd_glob_93, "nextjs/meta.json": __fd_glob_94, "prisma/meta.json": __fd_glob_95, }, {"auth/react-nextjs-auth-jwt.md": __fd_glob_96, "devops/cloudflare-origin-ssl-setup.md": __fd_glob_97, "devops/deploy-go-gin-vps.md": __fd_glob_98, "devops/deploy-laravel-vps.md": __fd_glob_99, "devops/deploy-nextjs-vps.md": __fd_glob_100, "devops/deploy-nodejs-express-vps.md": __fd_glob_101, "devops/deploy-php-vps.md": __fd_glob_102, "devops/deploy-react-vps.md": __fd_glob_103, "devops/deploy-wordpress-vps.md": __fd_glob_104, "devops/nginx-reverse-proxy-ssl.md": __fd_glob_105, "docker/dockerize-nextjs.md": __fd_glob_106, "docker/dockerize-nodejs.md": __fd_glob_107, "docker/node-postgres-compose.md": __fd_glob_108, "docker/postgres-docker-compose.md": __fd_glob_109, "github-actions/docker-ghcr-vps-cicd.md": __fd_glob_110, "github-actions/go-gin-cicd-vps.md": __fd_glob_111, "github-actions/laravel-cicd-vps.md": __fd_glob_112, "github-actions/nextjs-cicd-vps.md": __fd_glob_113, "github-actions/nodejs-pm2-cicd-vps.md": __fd_glob_114, "github-actions/react-vite-cicd-vps.md": __fd_glob_115, "index.md": __fd_glob_116, "kubernetes/deploy-nextjs-kubernetes.md": __fd_glob_117, "kubernetes/node-postgres-kubernetes.md": __fd_glob_118, "nextjs/nextjs-postgres-prisma.md": __fd_glob_119, "prisma/nextjs-postgres-prisma.md": __fd_glob_120, "prisma/nodejs-postgres-prisma.md": __fd_glob_121, });
 
-export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_122, "devops/meta.json": __fd_glob_123, "frontend/meta.json": __fd_glob_124, "fullstack/meta.json": __fd_glob_125, "meta.json": __fd_glob_126, }, {"backend/backend-roadmap.md": __fd_glob_127, "devops/devops-roadmap.md": __fd_glob_128, "frontend/frontend-roadmap.md": __fd_glob_129, "fullstack/fullstack-roadmap.md": __fd_glob_130, "index.md": __fd_glob_131, });
+export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_127, "devops/meta.json": __fd_glob_128, "frontend/meta.json": __fd_glob_129, "fullstack/meta.json": __fd_glob_130, "meta.json": __fd_glob_131, }, {"backend/backend-roadmap.md": __fd_glob_122, "devops/devops-roadmap.md": __fd_glob_123, "frontend/frontend-roadmap.md": __fd_glob_124, "fullstack/fullstack-roadmap.md": __fd_glob_125, "index.md": __fd_glob_126, });
 
 export const tools = await create.docs("tools", "content/tools", {"meta.json": __fd_glob_7, }, {"index.md": __fd_glob_8, });

@@ -42,6 +42,63 @@ interface StudioPreset {
   code: string;
 }
 
+function HighlightedCode({ code, language }: { code: string; language: string }) {
+  const lines = code.split("\n");
+
+  const highlightLine = (line: string) => {
+    // Comments
+    if (line.trim().startsWith("#") || line.trim().startsWith("--") || line.trim().startsWith("//")) {
+      return <span className="text-zinc-400 dark:text-zinc-500 italic">{line}</span>;
+    }
+
+    // Keyword matching regex
+    const tokens = line.split(/("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`(?:[^`\\]|\\.)*`|\b(?:import|export|from|async|function|const|return|await|throw|new|if|use|server|FROM|WORKDIR|COPY|RUN|ENV|USER|EXPOSE|CMD|AS|upstream|listen|proxy_pass|ssl_certificate|ssl_certificate_key|ssl_protocols|gzip|gzip_types|location|least_conn|CREATE|INDEX|CONCURRENTLY|IF|NOT|EXISTS|ON|INCLUDE|WHERE|EXPLAIN|ANALYZE|BUFFERS|COSTS|OFF|SELECT|ORDER|BY|DESC|LIMIT|NOW|INTERVAL)\b|[(),;{}[\].=:]|\s+)/g);
+
+    return tokens.map((tok, i) => {
+      if (!tok) return null;
+
+      // Strings
+      if ((tok.startsWith('"') && tok.endsWith('"')) || (tok.startsWith("'") && tok.endsWith("'")) || (tok.startsWith('`') && tok.endsWith('`'))) {
+        return <span key={i} className="text-emerald-600 dark:text-emerald-400 font-medium">{tok}</span>;
+      }
+
+      // Keywords
+      if (/^(import|export|from|async|function|const|return|await|throw|new|if|server|FROM|WORKDIR|COPY|RUN|ENV|USER|EXPOSE|CMD|AS|upstream|listen|proxy_pass|ssl_certificate|ssl_certificate_key|ssl_protocols|gzip|gzip_types|location|least_conn|CREATE|INDEX|CONCURRENTLY|IF|NOT|EXISTS|ON|INCLUDE|WHERE|EXPLAIN|ANALYZE|BUFFERS|COSTS|OFF|SELECT|ORDER|BY|DESC|LIMIT|NOW|INTERVAL)$/.test(tok)) {
+        return <span key={i} className="text-purple-600 dark:text-purple-400 font-bold">{tok}</span>;
+      }
+
+      // Types & Identifiers
+      if (/^(z|OrderSchema|FormData|processCheckout|auth|revalidateTag|db|session|validated|order|nextjs|nodejs)$/.test(tok)) {
+        return <span key={i} className="text-blue-600 dark:text-blue-400 font-semibold">{tok}</span>;
+      }
+
+      // Punctuation
+      if (/^[(),;{}[\].=:]$/.test(tok)) {
+        return <span key={i} className="text-zinc-400 dark:text-zinc-500">{tok}</span>;
+      }
+
+      return <span key={i} className="text-zinc-800 dark:text-zinc-200">{tok}</span>;
+    });
+  };
+
+  return (
+    <pre className="min-w-full font-mono text-xs leading-relaxed">
+      <code>
+        {lines.map((l, i) => (
+          <div key={i} className="table-row">
+            <span className="table-cell pr-4 text-right select-none text-zinc-300 dark:text-zinc-600 text-[11px] w-6">
+              {i + 1}
+            </span>
+            <span className="table-cell whitespace-pre">
+              {highlightLine(l)}
+            </span>
+          </div>
+        ))}
+      </code>
+    </pre>
+  );
+}
+
 const studioPresets: StudioPreset[] = [
   {
     id: "nextjs",
@@ -460,10 +517,8 @@ export function HeroShowcase() {
               </div>
 
               {/* Code Window with Multi-color Syntax Tokens */}
-              <div className="rounded-xl bg-zinc-50 dark:bg-[#0c0c0e] border border-zinc-200/80 dark:border-zinc-800/80 p-3.5 font-mono text-xs leading-relaxed max-h-[300px] overflow-x-auto text-zinc-800 dark:text-zinc-200 select-text">
-                <pre>
-                  <code>{currentPreset.code}</code>
-                </pre>
+              <div className="rounded-xl bg-zinc-50 dark:bg-[#0c0c0e] border border-zinc-200/80 dark:border-zinc-800/80 p-3 font-mono text-xs leading-relaxed max-h-[300px] overflow-x-auto text-zinc-800 dark:text-zinc-200 select-text">
+                <HighlightedCode code={currentPreset.code} language={currentPreset.language} />
               </div>
             </div>
 
