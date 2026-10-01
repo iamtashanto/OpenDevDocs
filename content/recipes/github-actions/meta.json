@@ -1,0 +1,11 @@
+{
+  "title": "CI/CD & GitHub Actions",
+  "pages": [
+    "nextjs-cicd-vps",
+    "react-vite-cicd-vps",
+    "nodejs-pm2-cicd-vps",
+    "go-gin-cicd-vps",
+    "laravel-cicd-vps",
+    "docker-ghcr-vps-cicd"
+  ]
+}

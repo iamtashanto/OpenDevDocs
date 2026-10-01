@@ -1,0 +1,12 @@
+{
+  "title": "Cloudflare",
+  "pages": [
+    "index",
+    "dns-records-configuration",
+    "proxy-modes-and-cdn",
+    "ssl-tls-encryption-modes",
+    "security-waf-and-rate-limiting",
+    "page-rules-and-transform-rules",
+    "websockets-and-realtime"
+  ]
+}

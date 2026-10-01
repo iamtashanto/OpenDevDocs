@@ -1,4 +1,14 @@
 {
-  "title": "DevOps & Infrastructure",
-  "pages": ["nginx-reverse-proxy-ssl"]
+  "title": "DevOps & Deployment",
+  "pages": [
+    "nginx-reverse-proxy-ssl",
+    "deploy-nextjs-vps",
+    "deploy-react-vps",
+    "deploy-nodejs-express-vps",
+    "deploy-go-gin-vps",
+    "deploy-php-vps",
+    "deploy-laravel-vps",
+    "deploy-wordpress-vps",
+    "cloudflare-origin-ssl-setup"
+  ]
 }

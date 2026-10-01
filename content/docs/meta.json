@@ -29,6 +29,8 @@
     "package-managers",
     "tools",
     "deployment",
+    "nginx",
+    "cloudflare",
     "github-actions",
     "kubernetes"
   ]

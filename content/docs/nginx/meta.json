@@ -1,0 +1,15 @@
+{
+  "title": "Nginx",
+  "pages": [
+    "index",
+    "core-configuration",
+    "server-blocks-and-virtual-hosts",
+    "location-blocks-and-routing",
+    "reverse-proxy-and-upstream",
+    "reverse-proxy-headers-and-websockets",
+    "ssl-tls-hardening",
+    "performance-caching-and-compression",
+    "security-rate-limiting-and-firewall",
+    "php-fpm-configuration"
+  ]
+}
