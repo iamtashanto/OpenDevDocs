@@ -186,14 +186,18 @@ export const homepageLearningPaths: LearningPathItem[] = [
 ];
 
 export const popularTechnologies: PopularTechItem[] = [
-  { name: "React", category: "Frontend", icon: "⚛️", href: "/docs", description: "Components, hooks, server components, and performance patterns." },
-  { name: "Next.js", category: "Full-Stack", icon: "▲", href: "/docs", description: "App Router, Server Actions, SSR, and production deployments." },
-  { name: "TypeScript", category: "Language", icon: "🔷", href: "/docs", description: "Static typing, generics, utility types, and strict mode configurations." },
-  { name: "Node.js", category: "Runtime", icon: "🟢", href: "/docs", description: "Asynchronous I/O, event loop, streams, and production server setup." },
-  { name: "Docker", category: "DevOps", icon: "🐳", href: "/docs", description: "Container lifecycle, Dockerfile optimization, and Docker Compose." },
-  { name: "PostgreSQL", category: "Database", icon: "🐘", href: "/docs", description: "Relational queries, indexing, migrations, and connection pooling." },
-  { name: "Git", category: "Version Control", icon: "🐙", href: "/commands", description: "Branching strategies, conflict resolution, rebase, and staging." },
-  { name: "Linux", category: "System", icon: "🐧", href: "/commands", description: "Shell scripting, daemon management, systemd, and server permissions." },
+  { name: "Next.js", category: "Full-Stack", icon: "▲", href: "/docs/nextjs", description: "App Router, Server Actions, SSR, and production deployments." },
+  { name: "React", category: "Frontend", icon: "⚛️", href: "/docs/react", description: "Components, hooks, server components, and performance patterns." },
+  { name: "Tailwind CSS", category: "Styling", icon: "🎨", href: "/docs/tailwindcss", description: "Modern utility-first CSS design tokens, dark mode, and responsive layouts." },
+  { name: "TypeScript", category: "Language", icon: "🔷", href: "/docs/typescript", description: "Static typing, generics, utility types, and strict mode configurations." },
+  { name: "Node.js", category: "Runtime", icon: "🟢", href: "/docs/nodejs", description: "Asynchronous I/O, event loop, streams, and production server setup." },
+  { name: "Kubernetes", category: "DevOps", icon: "☸️", href: "/docs/kubernetes", description: "Cluster orchestration, Pods, Deployments, Services, and HPA autoscaling." },
+  { name: "Nginx", category: "Web Server", icon: "🟢", href: "/docs/nginx", description: "Reverse proxy, SSL hardening, upstream load balancing, and FastCGI caching." },
+  { name: "GitHub Actions", category: "CI/CD", icon: "⚡", href: "/docs/github-actions", description: "Automated pipelines, least-privilege security, caching, and VPS deployments." },
+  { name: "Cloudflare", category: "Edge & DNS", icon: "🟠", href: "/docs/cloudflare", description: "Anycast DNS, WAF security, Full (Strict) SSL, and Edge CDN caching." },
+  { name: "Prisma ORM", category: "Database", icon: "◭", href: "/docs/prisma", description: "Type-safe schemas, Prisma Client queries, relations, and migrations." },
+  { name: "Docker", category: "Containers", icon: "🐳", href: "/docs/docker", description: "Container lifecycle, Dockerfile multi-stage builds, and Docker Compose." },
+  { name: "PostgreSQL", category: "Database", icon: "🐘", href: "/docs/postgresql", description: "Relational queries, indexing, transactions, and connection pooling." },
 ];
 
 export const popularCommands: PopularCommandItem[] = [
