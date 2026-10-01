@@ -52,6 +52,10 @@ git reset --hard origin/main
 git switch feat/awesome-feature
 ```
 
+<Callout type="warning">
+Running `git reset --hard` instantly overwrites any uncommitted files in your working directory. Always verify that your status is clean (`git status`) or stash changes (`git stash`) before running a hard reset.
+</Callout>
+
 ---
 
 ## Related Topics

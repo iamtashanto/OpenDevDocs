@@ -57,7 +57,7 @@ export function Terminal({
         <button
           type="button"
           onClick={onCopy}
-          aria-label="Copy terminal output"
+          aria-label={`Copy output from ${title}`}
           title="Copy output"
           className={cn(
             "inline-flex items-center justify-center size-6 rounded",
@@ -71,13 +71,19 @@ export function Terminal({
           ) : (
             <Copy className="size-3.5" aria-hidden="true" />
           )}
+          <span className="sr-only" aria-live="polite">
+            {copied ? `Copied ${title} output to clipboard` : ""}
+          </span>
         </button>
       </div>
 
       {/* Terminal Content */}
       <div
         id={`terminal-${title}`}
-        className="p-4 font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto leading-relaxed [&>pre]:my-0 [&>pre]:bg-transparent [&>pre]:p-0"
+        tabIndex={0}
+        role="region"
+        aria-label={`${title} terminal output`}
+        className="p-4 font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto leading-relaxed [&>pre]:my-0 [&>pre]:bg-transparent [&>pre]:p-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 rounded-b-xl"
       >
         {children}
       </div>

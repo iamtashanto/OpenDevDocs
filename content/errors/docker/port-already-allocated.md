@@ -90,8 +90,15 @@ docker ps --filter "publish=3000" --format "{{.ID}}" | xargs -r docker stop
 
     If it is a host process (e.g. PID 14232):
     ```bash
+    # Try graceful kill first:
+    kill 14232
+    # If unresponsive:
     kill -9 14232
     ```
+
+    <Callout type="warning">
+      Ensure the process identified by `lsof -i :<port>` is indeed your previous stopped dev instance before killing it. Avoid terminating essential database daemons or system processes.
+    </Callout>
   </Step>
 
   <Step step={3} title="Alternative: Change the Host Port Mapping">

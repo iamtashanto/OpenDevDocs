@@ -77,6 +77,10 @@ kill 12345
 # Forceful kill (Use only if process is frozen or unresponsive)
 kill -9 12345
 
+<Callout type="warning">
+Always send `SIGTERM` (`kill <PID>`) first. `SIGKILL` (`kill -9`) bypasses the application's shutdown handlers, meaning active database transactions will be aborted mid-flight, temporary files may remain locked, and in-flight writes will not be flushed to disk.
+</Callout>
+
 # Kill by process name
 pkill -f node
 killall nginx

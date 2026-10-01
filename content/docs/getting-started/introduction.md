@@ -1,6 +1,12 @@
 ---
 title: Introduction
 description: Get started with OpenDevDocs — the open-source developer knowledge platform built for learners, professionals, and contributors.
+category: getting-started
+topic: platform
+type: guide
+level: beginner
+tags: ["introduction", "getting-started", "overview", "platform"]
+lastVerified: "2026-10-01"
 ---
 
 # Introduction to OpenDevDocs

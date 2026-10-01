@@ -74,10 +74,23 @@ If two applications attempt to bind to the same port at the same time, the secon
 lsof -i :3000
 ```
 
-### Kill Process on macOS / Linux:
+### Terminate Process on macOS / Linux:
+
+First attempt a graceful termination (`SIGTERM`), which gives the application time to save state and cleanly close socket connections:
+
+```bash
+kill <PID>
+```
+
+If the process is frozen and unresponsive, send a forceful termination (`SIGKILL`):
+
 ```bash
 kill -9 <PID>
 ```
+
+<Callout type="warning">
+Use `kill -9` with caution. `SIGKILL` immediately destroys the process at the OS kernel level without giving it a chance to write unsaved state, flush disk buffers, or cleanly disconnect from databases. Always try `kill <PID>` (SIGTERM) first.
+</Callout>
 
 ### Find and Kill Process on Windows (PowerShell):
 ```powershell

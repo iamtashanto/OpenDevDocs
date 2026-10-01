@@ -1,6 +1,12 @@
 ---
 title: Git Commands
 description: Complete reference for Git commands — commit, branch, merge, rebase, and more.
+category: git
+topic: git
+type: reference
+level: beginner
+tags: ["git", "version-control", "commands", "cli"]
+lastVerified: "2026-10-01"
 ---
 
 # Git Commands

@@ -51,12 +51,16 @@ If you accidentally wiped `feat: awesome feature` with a hard reset:
 1. Run `git reflog` to locate the lost commit hash (`8a1b2c3`).
 2. Point your current branch back to that commit, or create a new branch from it:
    ```bash
-   # Option A: Create a new branch at that commit
+   # Option A (Recommended): Create a new rescue branch at that commit
    git branch rescued-work 8a1b2c3
 
-   # Option B: Reset your current branch back to that state
+   # Option B: Reset your current branch directly back to that state
    git reset --hard 8a1b2c3
    ```
+
+<Callout type="warning">
+Option A (`git branch rescued-work <hash>`) is safer than Option B because it does not discard uncommitted working directory changes. If you use Option B (`git reset --hard`), ensure you have stashed or committed any active working tree modifications first.
+</Callout>
 
 ---
 

@@ -38,6 +38,10 @@ Navigate to **Settings** → **Branches** (or **Rulesets**) and configure the fo
 ### 3. Block Force Pushes & Deletions
 - Completely disables `git push --force` on `main`, preventing accidental destruction of repository history.
 
+<Callout type="danger">
+Force-pushing (`git push --force`) to a shared branch rewrites history on the remote repository and can permanently overwrite commits made by teammates. In production repositories, force-pushing to `main` should always be prohibited by branch protection rules.
+</Callout>
+
 ---
 
 ## 2. CODEOWNERS File

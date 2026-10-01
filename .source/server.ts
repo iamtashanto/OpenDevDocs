@@ -404,16 +404,16 @@ import { default as __fd_glob_98 } from "../content/docs/deployment/meta.json?co
 import { default as __fd_glob_97 } from "../content/docs/databases/meta.json?collection=docs"
 import { default as __fd_glob_96 } from "../content/docs/css/meta.json?collection=docs"
 import { default as __fd_glob_95 } from "../content/docs/backend/meta.json?collection=docs"
-import { default as __fd_glob_94 } from "../content/roadmaps/meta.json?collection=roadmaps"
-import { default as __fd_glob_93 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
-import { default as __fd_glob_92 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
-import { default as __fd_glob_91 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
-import { default as __fd_glob_90 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
-import * as __fd_glob_89 from "../content/roadmaps/index.md?collection=roadmaps"
-import * as __fd_glob_88 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
-import * as __fd_glob_87 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
-import * as __fd_glob_86 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
-import * as __fd_glob_85 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
+import * as __fd_glob_94 from "../content/roadmaps/index.md?collection=roadmaps"
+import * as __fd_glob_93 from "../content/roadmaps/fullstack/fullstack-roadmap.md?collection=roadmaps"
+import * as __fd_glob_92 from "../content/roadmaps/frontend/frontend-roadmap.md?collection=roadmaps"
+import * as __fd_glob_91 from "../content/roadmaps/devops/devops-roadmap.md?collection=roadmaps"
+import * as __fd_glob_90 from "../content/roadmaps/backend/backend-roadmap.md?collection=roadmaps"
+import { default as __fd_glob_89 } from "../content/roadmaps/meta.json?collection=roadmaps"
+import { default as __fd_glob_88 } from "../content/roadmaps/fullstack/meta.json?collection=roadmaps"
+import { default as __fd_glob_87 } from "../content/roadmaps/frontend/meta.json?collection=roadmaps"
+import { default as __fd_glob_86 } from "../content/roadmaps/devops/meta.json?collection=roadmaps"
+import { default as __fd_glob_85 } from "../content/roadmaps/backend/meta.json?collection=roadmaps"
 import * as __fd_glob_84 from "../content/recipes/nextjs/nextjs-postgres-prisma.md?collection=recipes"
 import * as __fd_glob_83 from "../content/recipes/index.md?collection=recipes"
 import * as __fd_glob_82 from "../content/recipes/docker/postgres-docker-compose.md?collection=recipes"
@@ -517,6 +517,6 @@ export const packages = await create.docs("packages", "content/packages", {"meta
 
 export const recipes = await create.docs("recipes", "content/recipes", {"auth/meta.json": __fd_glob_72, "devops/meta.json": __fd_glob_73, "docker/meta.json": __fd_glob_74, "meta.json": __fd_glob_75, "nextjs/meta.json": __fd_glob_76, }, {"auth/react-nextjs-auth-jwt.md": __fd_glob_77, "devops/nginx-reverse-proxy-ssl.md": __fd_glob_78, "docker/dockerize-nextjs.md": __fd_glob_79, "docker/dockerize-nodejs.md": __fd_glob_80, "docker/node-postgres-compose.md": __fd_glob_81, "docker/postgres-docker-compose.md": __fd_glob_82, "index.md": __fd_glob_83, "nextjs/nextjs-postgres-prisma.md": __fd_glob_84, });
 
-export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_90, "devops/meta.json": __fd_glob_91, "frontend/meta.json": __fd_glob_92, "fullstack/meta.json": __fd_glob_93, "meta.json": __fd_glob_94, }, {"backend/backend-roadmap.md": __fd_glob_85, "devops/devops-roadmap.md": __fd_glob_86, "frontend/frontend-roadmap.md": __fd_glob_87, "fullstack/fullstack-roadmap.md": __fd_glob_88, "index.md": __fd_glob_89, });
+export const roadmaps = await create.docs("roadmaps", "content/roadmaps", {"backend/meta.json": __fd_glob_85, "devops/meta.json": __fd_glob_86, "frontend/meta.json": __fd_glob_87, "fullstack/meta.json": __fd_glob_88, "meta.json": __fd_glob_89, }, {"backend/backend-roadmap.md": __fd_glob_90, "devops/devops-roadmap.md": __fd_glob_91, "frontend/frontend-roadmap.md": __fd_glob_92, "fullstack/fullstack-roadmap.md": __fd_glob_93, "index.md": __fd_glob_94, });
 
 export const tools = await create.docs("tools", "content/tools", {"meta.json": __fd_glob_7, }, {"index.md": __fd_glob_8, });

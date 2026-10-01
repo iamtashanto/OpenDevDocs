@@ -81,10 +81,18 @@ The operating system kernel assigns network ports exclusively to one active list
   </Step>
 
   <Step step={2} title="Kill the Process">
-    Terminate the process using its PID (replace `48291` with your PID):
+    Terminate the process using its PID (replace `48291` with your PID). First try a graceful termination:
+    ```bash
+    kill 48291
+    ```
+    If the process does not shut down after a few seconds, force kill it:
     ```bash
     kill -9 48291
     ```
+
+    <Callout type="warning">
+      Always verify the process name from `lsof` before killing it to ensure you do not accidentally terminate a background database or unrelated developer tool.
+    </Callout>
   </Step>
 </Steps>
 

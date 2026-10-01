@@ -1,6 +1,12 @@
 ---
 title: Documentation
 description: Learn technologies step-by-step with OpenDevDocs — from beginner fundamentals to production-level development.
+category: docs
+topic: platform
+type: guide
+level: beginner
+tags: ["documentation", "learning", "overview", "guides"]
+lastVerified: "2026-10-01"
 ---
 
 # Documentation

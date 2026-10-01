@@ -56,13 +56,21 @@ lsof -i :3000
 # COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 # node    14285 user   23u  IPv6 0x1234567890abcdef      0t0  TCP *:3000 (LISTEN)
 
-# Step 2: Kill the process by PID
+# Step 2: Kill the process by PID (Try SIGTERM first, fallback to SIGKILL)
+kill 14285
+# or if unresponsive:
 kill -9 14285
 ```
 
-### One-Liner Quick Kill
+<Callout type="warning">
+Always inspect the `COMMAND` column from `lsof -i :<port>` before killing the process. You want to make sure you are terminating a stray development server rather than an unrelated system service or database.
+</Callout>
+
+### One-Liner Quick Kill (Development Only)
 ```bash
-# macOS & Linux
+# Gracefully kill holding process:
+kill $(lsof -t -i :3000)
+# Force kill if stuck:
 kill -9 $(lsof -t -i :3000)
 ```
 

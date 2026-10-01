@@ -1,6 +1,12 @@
 ---
 title: Getting Started
 description: How to navigate and use OpenDevDocs effectively.
+category: getting-started
+topic: platform
+type: guide
+level: beginner
+tags: ["introduction", "getting-started", "guide", "navigation"]
+lastVerified: "2026-10-01"
 ---
 
 # Getting Started

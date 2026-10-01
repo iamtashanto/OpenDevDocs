@@ -38,9 +38,16 @@ Quickly identifies which PID (Process Identifier) is actively bound to a port (e
 # Step 1: List only the PID (-t) listening on port 3000
 lsof -i :3000 -t
 
-# Step 2: Pipe the PID into kill -9
+# Step 2: Pipe the PID into kill (graceful SIGTERM first)
+lsof -i :3000 -t | xargs kill
+
+# Or if process is completely unresponsive, force kill:
 lsof -i :3000 -t | xargs kill -9
 ```
+
+<Callout type="warning">
+Use `kill -9` (`SIGKILL`) with caution. `SIGKILL` does not allow the application to flush disk buffers or close active network and database connections cleanly. Try graceful termination without `-9` first.
+</Callout>
 
 ---
 

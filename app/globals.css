@@ -1,14 +1,11 @@
-/* ─── Fonts must come before @import "tailwindcss" ─────────── */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
-
 @import "tailwindcss";
 @import "fumadocs-ui/style.css";
 
 /* ─── Design Tokens & Theme Variables ──────────────────────── */
 :root {
   /* Font Families */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
   /* Brand Blue Palette */
   --brand-50: hsl(224, 100%, 97%);

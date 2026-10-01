@@ -41,7 +41,12 @@ export function Command({
       )}
       {...props}
     >
-      <div className="flex items-center gap-2.5 min-w-0 font-mono text-xs sm:text-sm overflow-x-auto select-all">
+      <div
+        tabIndex={0}
+        role="region"
+        aria-label="Command snippet"
+        className="flex items-center gap-2.5 min-w-0 font-mono text-xs sm:text-sm overflow-x-auto select-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-500 rounded"
+      >
         <span className="text-slate-500 select-none font-bold shrink-0">
           {prompt}
         </span>
@@ -65,6 +70,9 @@ export function Command({
         ) : (
           <Copy className="size-3.5" aria-hidden="true" />
         )}
+        <span className="sr-only" aria-live="polite">
+          {copied ? "Copied command to clipboard" : ""}
+        </span>
       </button>
     </div>
   );
