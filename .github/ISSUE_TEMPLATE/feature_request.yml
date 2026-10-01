@@ -1,0 +1,26 @@
+name: 💡 Feature Request
+description: Propose a new feature, UI enhancement, search improvement, or platform capability.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Missing Capability
+      description: Is your feature request related to a problem or limitation?
+      placeholder: I find it difficult to search commands across different operating systems...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see implemented.
+      placeholder: Add an OS filter button in the search modal...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered (Optional)
+      description: Any alternative solutions or features you've considered.

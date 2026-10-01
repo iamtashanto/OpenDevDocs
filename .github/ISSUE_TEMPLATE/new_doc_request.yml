@@ -1,0 +1,39 @@
+name: 📚 New Documentation Request
+description: Request a new guide, technology tutorial, command reference, or error solution.
+title: "[Doc Request]: "
+labels: ["documentation", "help wanted"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Technology / Topic Name
+      placeholder: Rust Axum, Kubernetes Ingress, Redis Caching, etc.
+    validations:
+      required: true
+  - type: dropdown
+    id: target_section
+    attributes:
+      label: Target Section
+      options:
+        - Docs (/docs)
+        - Commands (/commands)
+        - Errors (/errors)
+        - Recipes (/recipes)
+        - Packages (/packages)
+        - Tools (/tools)
+    validations:
+      required: true
+  - type: textarea
+    id: overview
+    attributes:
+      label: What should this documentation cover?
+      description: Outline key sections, use cases, and problems solved.
+      placeholder: 1. Setup, 2. Core Concepts, 3. Common Pitfalls...
+    validations:
+      required: true
+  - type: checkboxes
+    id: willing_to_pr
+    attributes:
+      label: Would you like to write this guide?
+      options:
+        - label: Yes, I want to write the initial draft!

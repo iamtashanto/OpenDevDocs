@@ -5,6 +5,8 @@ import { globalMdxComponents } from "@/mdx-components";
 import { commandsSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
+import { buildPageMetadata, generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -14,27 +16,43 @@ export async function generateStaticParams() {
   return commandsSource.generateParams();
 }
 
-export async function generateMetadata(
-  props: PageProps
-): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const { slug } = await props.params;
   const page = commandsSource.getPage(slug);
   if (!page) notFound();
 
-  return {
-    title: page.data.title,
+  return buildPageMetadata({
+    title: `${page.data.title} | OpenDevDocs Commands`,
     description: page.data.description,
-  };
+    urlPath: page.url,
+    category: page.data.category,
+    tags: page.data.tags,
+    lastVerified: page.data.lastVerified,
+  });
 }
 
-export default async function CommandsPageRoute(
-  props: PageProps
-) {
+export default async function CommandsPageRoute(props: PageProps) {
   const { slug } = await props.params;
   const page = commandsSource.getPage(slug);
   if (!page) notFound();
 
   const MDXContent = page.data.body;
+
+  const articleJsonLd = generateArticleJsonLd({
+    title: page.data.title,
+    description: page.data.description || "",
+    urlPath: page.url,
+    category: page.data.category,
+    tags: page.data.tags,
+    lastVerified: page.data.lastVerified,
+  });
+
+  const breadcrumbs = [
+    { name: "Commands", url: "/commands" },
+    ...(page.data.category ? [{ name: page.data.category, url: `/commands#${page.data.category}` }] : []),
+    { name: page.data.title, url: page.url },
+  ];
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
   return (
     <DocsPage
@@ -47,6 +65,9 @@ export default async function CommandsPageRoute(
         path: `content/commands/${page.path}`,
       }}
     >
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+
       <ArticleHeader
         title={page.data.title}
         description={page.data.description}
@@ -67,7 +88,11 @@ export default async function CommandsPageRoute(
       <ArticleFooter
         filePath={`content/commands/${page.path}`}
         pageTitle={page.data.title}
+        urlPath={page.url}
+        topic={page.data.topic}
+        category={page.data.category}
         tags={page.data.tags}
+        type={page.data.type ?? "reference"}
       />
     </DocsPage>
   );

@@ -1,0 +1,36 @@
+name: 🐛 Documentation Bug
+description: Report an error, typo, broken link, or inaccurate explanation in existing docs.
+title: "[Doc Bug]: "
+labels: ["documentation", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve OpenDevDocs documentation!
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      description: What is the URL or file path of the documentation page with the issue?
+      placeholder: https://docs.tashanto.com/docs/docker/networks
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Describe the incorrect code example, typo, broken command, or confusing explanation.
+      placeholder: The command in step 2 fails with error...
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Fix (Optional)
+      description: If you know what the correct text or command should be, please share it.
+      placeholder: It should be changed to: docker network create ...
+  - type: checkboxes
+    id: willing_to_pr
+    attributes:
+      label: Would you like to submit a PR to fix this?
+      options:
+        - label: Yes, I am willing to submit a pull request!

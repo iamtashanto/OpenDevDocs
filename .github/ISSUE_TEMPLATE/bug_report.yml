@@ -1,0 +1,30 @@
+name: 🛑 Platform Bug Report
+description: Report a bug, broken UI component, search failure, or platform error on docs.tashanto.com.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear and concise description of what the bug is.
+      placeholder: The theme toggle button fails to switch modes on mobile Safari...
+    validations:
+      required: true
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '/docs'
+        2. Click on 'Search'
+        3. Press 'Escape'
+        4. See error...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment (Browser, OS, Device)
+      placeholder: Chrome 129 on macOS Sonoma

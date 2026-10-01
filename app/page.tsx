@@ -38,12 +38,16 @@ import {
   ToolCard,
   RecentDocCard,
 } from "@/components/homepage-cards";
+import { buildPageMetadata, generateWebSiteJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
   description:
     "A community-driven open-source developer knowledge platform for learning technologies, finding commands, solving errors, and building production-ready software.",
-};
+  urlPath: "/",
+  ogType: "website",
+});
 
 const quickStartTracks = [
   {
@@ -77,8 +81,11 @@ const quickStartTracks = [
 ];
 
 export default function HomePage() {
+  const websiteJsonLd = generateWebSiteJsonLd();
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors">
+      <JsonLd data={websiteJsonLd} />
       <SkipNav />
       <SiteHeader />
 

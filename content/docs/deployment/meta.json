@@ -1,0 +1,24 @@
+{
+  "title": "Deployment",
+  "pages": [
+    "what-is-deployment",
+    "dev-vs-prod",
+    "environment-variables",
+    "build-process",
+    "production-servers",
+    "domains-and-dns",
+    "https-and-ssl",
+    "reverse-proxies",
+    "process-managers",
+    "logs-and-monitoring",
+    "backups-and-recovery",
+    "rollback-strategies",
+    "deploy-nextjs-vercel",
+    "deploy-static-frontend",
+    "deploy-nodejs-vps",
+    "pm2-process-manager",
+    "nginx-reverse-proxy",
+    "configure-https-letsencrypt",
+    "git-based-deployment"
+  ]
+}

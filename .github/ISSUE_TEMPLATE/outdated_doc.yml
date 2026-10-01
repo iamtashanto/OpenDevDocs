@@ -1,0 +1,32 @@
+name: ⏳ Outdated Documentation
+description: Report documentation that references older software versions, deprecated APIs, or obsolete conventions.
+title: "[Outdated]: "
+labels: ["documentation", "outdated"]
+body:
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      placeholder: https://docs.tashanto.com/docs/nextjs/routing
+    validations:
+      required: true
+  - type: input
+    id: current_version
+    attributes:
+      label: New / Current Upstream Version
+      placeholder: Next.js 16 / React 19 / Node 22
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What has changed in modern versions?
+      placeholder: The Pages Router syntax is described instead of the modern App Router...
+    validations:
+      required: true
+  - type: checkboxes
+    id: willing_to_pr
+    attributes:
+      label: Would you like to submit a PR to update this?
+      options:
+        - label: Yes, I am willing to submit a pull request!

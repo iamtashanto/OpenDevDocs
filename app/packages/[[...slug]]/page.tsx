@@ -5,6 +5,8 @@ import { globalMdxComponents } from "@/mdx-components";
 import { packagesSource } from "@/app/source";
 import { ArticleHeader } from "@/components/docs/article-header";
 import { ArticleFooter } from "@/components/docs/article-footer";
+import { buildPageMetadata, generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -14,27 +16,42 @@ export async function generateStaticParams() {
   return packagesSource.generateParams();
 }
 
-export async function generateMetadata(
-  props: PageProps
-): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const { slug } = await props.params;
   const page = packagesSource.getPage(slug);
   if (!page) notFound();
 
-  return {
-    title: page.data.title,
+  return buildPageMetadata({
+    title: `${page.data.title} | OpenDevDocs Package Reference`,
     description: page.data.description,
-  };
+    urlPath: page.url,
+    category: page.data.category,
+    tags: page.data.tags,
+    lastVerified: page.data.lastVerified,
+  });
 }
 
-export default async function PackagesPageRoute(
-  props: PageProps
-) {
+export default async function PackagesPageRoute(props: PageProps) {
   const { slug } = await props.params;
   const page = packagesSource.getPage(slug);
   if (!page) notFound();
 
   const MDXContent = page.data.body;
+
+  const articleJsonLd = generateArticleJsonLd({
+    title: page.data.title,
+    description: page.data.description || "",
+    urlPath: page.url,
+    category: page.data.category,
+    tags: page.data.tags,
+    lastVerified: page.data.lastVerified,
+  });
+
+  const breadcrumbs = [
+    { name: "Packages", url: "/packages" },
+    { name: page.data.title, url: page.url },
+  ];
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
   return (
     <DocsPage
@@ -47,6 +64,9 @@ export default async function PackagesPageRoute(
         path: `content/packages/${page.path}`,
       }}
     >
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+
       <ArticleHeader
         title={page.data.title}
         description={page.data.description}
@@ -67,7 +87,11 @@ export default async function PackagesPageRoute(
       <ArticleFooter
         filePath={`content/packages/${page.path}`}
         pageTitle={page.data.title}
+        urlPath={page.url}
+        topic={page.data.topic}
+        category={page.data.category}
         tags={page.data.tags}
+        type={page.data.type ?? "reference"}
       />
     </DocsPage>
   );
