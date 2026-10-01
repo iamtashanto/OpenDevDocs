@@ -33,6 +33,24 @@
     "nginx",
     "cloudflare",
     "github-actions",
-    "kubernetes"
+    "kubernetes",
+    "mongodb",
+    "redis",
+    "authentication",
+    "testing",
+    "security",
+    "system-design",
+    "react-native",
+    "go",
+    "gin",
+    "vue",
+    "nuxt",
+    "rust",
+    "helm",
+    "terraform",
+    "aws",
+    "monitoring",
+    "prometheus",
+    "grafana"
   ]
 }
