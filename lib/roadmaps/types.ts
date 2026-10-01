@@ -1,8 +1,10 @@
 export type RoadmapNodeType =
   | "primary"
   | "topic"
+  | "option"
   | "optional"
   | "alternative"
+  | "group"
   | "advanced"
   | "coming_soon";
 
@@ -33,6 +35,15 @@ export interface RoadmapNode {
   keyConcepts?: string[];
   badge?: string;
   estimatedTime?: string;
+  /** Coordinates are deliberately optional: curated roadmaps can override the map layout. */
+  position?: { x: number; y: number };
+  groupId?: string;
+}
+
+export interface RoadmapGroup {
+  id: string;
+  title: string;
+  nodeIds: string[];
 }
 
 export interface RoadmapEdge {
@@ -63,5 +74,6 @@ export interface RoadmapDefinition {
   sections: RoadmapSection[];
   nodes: RoadmapNode[];
   edges: RoadmapEdge[];
+  groups?: RoadmapGroup[];
   relatedRoadmaps?: string[];
 }
