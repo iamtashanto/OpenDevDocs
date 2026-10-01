@@ -30,7 +30,7 @@ This roadmap outlines the complete path to becoming a production-ready Full Stac
 
 ---
 
-<RoadmapView trackId="frontend" />
+<RoadmapView trackId="fullstack" />
 
 ---
 

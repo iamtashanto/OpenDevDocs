@@ -1079,25 +1079,30 @@ kbd {
   color: #71717a !important;
 }
 
-/* ─── Reduced Motion Support ────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .hero-orb,
-  .hero-beam,
-  .hero-sparkle,
-  .hero-center-glow__inner,
-  .gradient-text,
-  .btn-shimmer::after,
-  .btn-glow::before {
-    animation: none !important;
-  }
+/* ─── Modern Roadmap Visual Graph Aesthetics ─────────────────── */
+.roadmap-spine-pulse {
+  background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+  background-size: 200% 200%;
+  animation: roadmapFlow 6s ease infinite;
 }
+
+@keyframes roadmapFlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.roadmap-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.roadmap-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1), 0 0 15px 0 rgba(59, 130, 246, 0.15);
+}
+
+.dark .roadmap-card-hover:hover {
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6), 0 0 20px 0 rgba(59, 130, 246, 0.25);
+}
+
 

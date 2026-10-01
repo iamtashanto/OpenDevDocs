@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { RoadmapInteractive } from "@/components/ui/roadmap-interactive";
+import { RoadmapCanvas } from "@/components/roadmaps/roadmap-canvas";
 
 export function RoadmapView({ trackId }: { trackId?: string }) {
-  return <RoadmapInteractive />;
+  return <RoadmapCanvas initialRoadmapSlug={trackId || "frontend"} />;
 }
+
