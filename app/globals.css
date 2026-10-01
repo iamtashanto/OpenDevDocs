@@ -51,25 +51,25 @@
 }
 
 .dark {
-  /* Dark Theme Color System (Slate/Zinc Dark) */
-  --bg-primary: hsl(224, 30%, 6%);
-  --bg-secondary: hsl(224, 25%, 9%);
-  --bg-tertiary: hsl(224, 20%, 12%);
-  --bg-card: hsl(224, 25%, 8%);
-  --bg-muted: hsl(224, 20%, 13%);
-  --bg-code: hsl(224, 25%, 10%);
+  /* Obsidian Dark Theme Color System (Next.js / Linear style) */
+  --bg-primary: hsl(240, 10%, 3.9%); /* #09090b */
+  --bg-secondary: hsl(240, 10%, 6%);
+  --bg-tertiary: hsl(240, 6%, 10%);
+  --bg-card: hsl(240, 10%, 5%);
+  --bg-muted: hsl(240, 6%, 12%);
+  --bg-code: hsl(240, 10%, 4%);
 
-  --text-primary: hsl(210, 40%, 98%);
-  --text-secondary: hsl(215, 20%, 75%);
-  --text-muted: hsl(215, 16%, 55%);
-  --text-inverse: hsl(222, 47%, 11%);
+  --text-primary: hsl(0, 0%, 98%);
+  --text-secondary: hsl(240, 5%, 65%);
+  --text-muted: hsl(240, 5%, 45%);
+  --text-inverse: hsl(240, 10%, 4%);
 
-  --border-subtle: hsl(224, 20%, 15%);
-  --border-default: hsl(224, 18%, 20%);
-  --border-strong: hsl(224, 16%, 30%);
+  --border-subtle: hsl(240, 6%, 14%);
+  --border-default: hsl(240, 6%, 18%);
+  --border-strong: hsl(240, 6%, 28%);
 
   --focus-ring: hsl(224, 85%, 64%);
-  --focus-ring-offset: hsl(224, 30%, 6%);
+  --focus-ring-offset: hsl(240, 10%, 4%);
 }
 
 /* ─── Global Base Resets & Layout ───────────────────────────── */
@@ -246,6 +246,277 @@ kbd {
   max-width: 50rem; /* 800px */
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   PREMIUM VISUAL EFFECTS — nextjs.org-inspired
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Hero Section Container ────────────────────────────────── */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+    hsl(224, 30%, 98%) 0%,
+    hsl(220, 20%, 97%) 50%,
+    hsl(0, 0%, 100%) 100%
+  );
+}
+
+.dark .hero-section {
+  background: linear-gradient(180deg,
+    hsl(224, 40%, 4%) 0%,
+    hsl(224, 30%, 6%) 50%,
+    hsl(224, 30%, 6%) 100%
+  );
+}
+
+/* ─── Hero Visual Layer (absolute positioned container) ────── */
+.hero-visual-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Animated Grid Pattern ─────────────────────────────────── */
+.hero-animated-grid {
+  position: absolute;
+  inset: 0;
+  color: hsl(224, 60%, 45%);
+  opacity: 0.4;
+}
+
+.dark .hero-animated-grid {
+  color: hsl(224, 60%, 60%);
+  opacity: 0.2;
+}
+
+/* ─── Floating Gradient Orbs ────────────────────────────────── */
+.hero-orbs {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.dark .hero-orb {
+  opacity: 0.35;
+  filter: blur(100px);
+}
+
+.hero-orb--blue {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, hsl(224, 90%, 60%) 0%, transparent 70%);
+  top: -10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.hero-orb--purple {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, hsl(265, 90%, 65%) 0%, transparent 70%);
+  top: 10%;
+  right: 10%;
+  animation-delay: -5s;
+  animation-duration: 25s;
+}
+
+.hero-orb--cyan {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, hsl(190, 90%, 55%) 0%, transparent 70%);
+  bottom: -5%;
+  left: 50%;
+  animation-delay: -10s;
+  animation-duration: 22s;
+}
+
+.hero-orb--rose {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, hsl(350, 85%, 60%) 0%, transparent 70%);
+  top: 40%;
+  left: -5%;
+  animation-delay: -15s;
+  animation-duration: 28s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, 30px) scale(0.95); }
+  75% { transform: translate(20px, 10px) scale(1.02); }
+}
+
+/* ─── Animated Beam Lines ────────────────────────────────────── */
+.hero-beams {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-beam {
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  opacity: 0;
+  animation: beamFall 6s ease-in-out infinite;
+}
+
+.hero-beam::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsl(224, 85%, 60%) 50%,
+    transparent 100%
+  );
+  border-radius: 1px;
+}
+
+.dark .hero-beam::after {
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsl(224, 85%, 70%) 50%,
+    transparent 100%
+  );
+}
+
+.hero-beam--1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.hero-beam--2 {
+  left: 45%;
+  animation-delay: 2s;
+}
+
+.hero-beam--3 {
+  left: 72%;
+  animation-delay: 4s;
+}
+
+.hero-beam--4 {
+  left: 88%;
+  animation-delay: 1.5s;
+}
+
+@keyframes beamFall {
+  0% { top: -120px; opacity: 0; }
+  10% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  90% { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ─── Hero Laser Lines (Next.js style) ───────────────────────── */
+.hero-laser-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-laser-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsl(224, 85%, 60% / 0.15) 30%,
+    hsl(265, 85%, 60% / 0.25) 50%,
+    hsl(224, 85%, 60% / 0.15) 70%,
+    transparent 100%
+  );
+}
+
+.dark .hero-laser-line {
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsl(224, 85%, 60% / 0.2) 30%,
+    hsl(265, 85%, 60% / 0.35) 50%,
+    hsl(224, 85%, 60% / 0.2) 70%,
+    transparent 100%
+  );
+}
+
+.hero-laser-line--left {
+  left: 15%;
+}
+
+.hero-laser-line--right {
+  right: 15%;
+}
+
+
+/* ─── Sparkle Particles ──────────────────────────────────────── */
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: hsl(224, 85%, 65%);
+  opacity: 0;
+  animation: sparkle 4s ease-in-out infinite;
+}
+
+.dark .hero-sparkle {
+  background: hsl(224, 85%, 75%);
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 0.7; transform: scale(1); }
+}
+
+/* ─── Center Glow Effect ─────────────────────────────────────── */
+.hero-center-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+}
+
+.hero-center-glow__inner {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center,
+    hsl(224, 85%, 55% / 0.12) 0%,
+    hsl(265, 80%, 55% / 0.06) 35%,
+    transparent 70%
+  );
+  animation: centerPulse 8s ease-in-out infinite;
+}
+
+.dark .hero-center-glow__inner {
+  background: radial-gradient(ellipse at center,
+    hsl(224, 85%, 55% / 0.18) 0%,
+    hsl(265, 80%, 55% / 0.08) 35%,
+    transparent 70%
+  );
+}
+
+@keyframes centerPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
 /* ─── Hero Gradients & Subtle Backgrounds ──────────────────── */
 .hero-gradient {
   background:
@@ -261,37 +532,273 @@ kbd {
   background-size: 48px 48px;
 }
 
-/* ─── Subtle Elevation & Hover Effects ──────────────────────── */
-.card-interactive {
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
-}
-
-.card-interactive:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-}
-
-.dark .card-interactive:hover {
-  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px hsl(224 85% 64% / 0.25);
-}
-
+/* ─── Animated Gradient Text ────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, hsl(224, 90%, 55%) 0%, hsl(265, 85%, 55%) 50%, hsl(224, 90%, 55%) 100%);
-  background-size: 200% 200%;
+  background: linear-gradient(135deg,
+    hsl(224, 90%, 55%) 0%,
+    hsl(265, 85%, 55%) 25%,
+    hsl(190, 85%, 50%) 50%,
+    hsl(265, 85%, 55%) 75%,
+    hsl(224, 90%, 55%) 100%
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
+  animation: gradientShift 6s ease-in-out infinite;
 }
 
 .dark .gradient-text {
-  background: linear-gradient(135deg, hsl(220, 100%, 75%) 0%, hsl(265, 95%, 75%) 50%, hsl(220, 100%, 75%) 100%);
-  background-size: 200% 200%;
+  background: linear-gradient(135deg,
+    hsl(220, 100%, 75%) 0%,
+    hsl(265, 95%, 75%) 25%,
+    hsl(190, 95%, 70%) 50%,
+    hsl(265, 95%, 75%) 75%,
+    hsl(220, 100%, 75%) 100%
+  );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
+  animation: gradientShift 6s ease-in-out infinite;
 }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Premium Card Hover Effects ────────────────────────────── */
+.card-interactive {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px -12px rgba(0, 0, 0, 0.08),
+    0 10px 20px -8px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+
+.dark .card-interactive:hover {
+  box-shadow:
+    0 20px 50px -15px rgba(0, 0, 0, 0.6),
+    0 0 0 1px hsl(224 85% 64% / 0.2),
+    0 0 30px -10px hsl(224 85% 64% / 0.15);
+}
+
+/* ─── Gradient Border Card ──────────────────────────────────── */
+.card-gradient-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    hsl(224, 80%, 60% / 0.3),
+    hsl(265, 80%, 60% / 0.3),
+    hsl(190, 80%, 60% / 0.1),
+    transparent
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* ─── Section Divider with Gradient ─────────────────────────── */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    hsl(224, 80%, 55% / 0.2) 20%,
+    hsl(224, 80%, 55% / 0.1) 50%,
+    hsl(224, 80%, 55% / 0.2) 80%,
+    transparent 100%
+  );
+}
+
+/* ─── Announcement Banner ────────────────────────────────────── */
+.announcement-pill {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+.announcement-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    hsl(224, 85%, 60% / 0.4),
+    hsl(265, 85%, 60% / 0.4),
+    hsl(224, 85%, 60% / 0.2)
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* ─── Glow Button Effect ─────────────────────────────────────── */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    hsl(224, 85%, 55%),
+    hsl(265, 85%, 55%),
+    hsl(224, 85%, 55%)
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  animation: gradientShift 3s ease-in-out infinite;
+  filter: blur(12px);
+}
+
+.btn-glow:hover::before {
+  opacity: 0.6;
+}
+
+.dark .btn-glow:hover::before {
+  opacity: 0.4;
+}
+
+/* ─── CTA Button with Shimmer ────────────────────────────────── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmerSlide 3s ease-in-out infinite;
+}
+
+@keyframes shimmerSlide {
+  0% { left: -100%; }
+  60%, 100% { left: 100%; }
+}
+
+/* ─── Tech Logo Marquee Effect ───────────────────────────────── */
+.tech-card-glow {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tech-card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 50% 50%,
+    hsl(224, 85%, 60% / 0.08) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-card-glow:hover::after {
+  opacity: 1;
+}
+
+/* ─── Background Subtle Patterns ─────────────────────────────── */
+.bg-dot-pattern {
+  background-image: radial-gradient(
+    circle,
+    hsl(224, 60%, 60% / 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(
+    circle,
+    hsl(224, 60%, 60% / 0.06) 1px,
+    transparent 1px
+  );
+}
+
+/* ─── Section Background Treatments ──────────────────────────── */
+.section-alt {
+  background: linear-gradient(180deg,
+    hsl(220, 20%, 97% / 0.5) 0%,
+    hsl(220, 20%, 98% / 0.3) 100%
+  );
+}
+
+.dark .section-alt {
+  background: linear-gradient(180deg,
+    hsl(224, 25%, 7% / 0.5) 0%,
+    hsl(224, 25%, 6%) 100%
+  );
+}
+
+/* ─── Fade-in Animation ──────────────────────────────────────── */
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
 
 /* ─── Custom Scrollbar ──────────────────────────────────────── */
 ::-webkit-scrollbar {
@@ -321,5 +828,15 @@ kbd {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hero-orb,
+  .hero-beam,
+  .hero-sparkle,
+  .hero-center-glow__inner,
+  .gradient-text,
+  .btn-shimmer::after,
+  .btn-glow::before {
+    animation: none !important;
   }
 }

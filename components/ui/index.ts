@@ -21,3 +21,8 @@ export { Kbd, type KbdProps } from "./kbd";
 export { ThemeToggle, type ThemeToggleProps } from "./theme-toggle";
 export { SearchButton, type SearchButtonProps } from "./search-button";
 export { SkipNav } from "./skip-nav";
+export { SpotlightCard } from "./spotlight-card";
+export { HeroShowcase } from "./hero-showcase";
+export { BentoGridShowcase } from "./bento-grid";
+export { InteractiveTechMatrix } from "./interactive-tech-matrix";
+export { AnimatedHeroBackground } from "./animated-hero";

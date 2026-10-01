@@ -9,18 +9,24 @@ export function SiteFooter() {
   return (
     <footer
       role="contentinfo"
-      className="w-full border-t border-slate-200/80 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-950/50 text-slate-600 dark:text-slate-400 text-sm transition-colors"
+      className="w-full border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-950/80 text-slate-600 dark:text-slate-400 text-sm transition-colors"
     >
-      <div className="container-site py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+      {/* Gradient accent line at top */}
+      <div
+        className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
+        aria-hidden="true"
+      />
+
+      <div className="container-site py-14 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Brand & Mission Column */}
           <div className="md:col-span-2 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2.5 font-bold text-base text-slate-900 dark:text-slate-100"
+              className="inline-flex items-center gap-2.5 font-bold text-base text-slate-900 dark:text-slate-100 group"
               aria-label={`${siteConfig.name} Homepage`}
             >
-              <div className="flex items-center justify-center size-7 rounded-lg bg-blue-600 text-white shadow-sm">
+              <div className="flex items-center justify-center size-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/30 transition-all duration-300">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -78,7 +84,7 @@ export function SiteFooter() {
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-100">
               Documentation
             </p>
-            <nav aria-label="Documentation sections" className="flex flex-col space-y-2">
+            <nav aria-label="Documentation sections" className="flex flex-col space-y-2.5">
               {contentSections.slice(0, 4).map((section) => (
                 <Link
                   key={section.key}
@@ -97,7 +103,7 @@ export function SiteFooter() {
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-100">
               Reference & Guides
             </p>
-            <nav aria-label="Reference links" className="flex flex-col space-y-2">
+            <nav aria-label="Reference links" className="flex flex-col space-y-2.5">
               {contentSections.slice(4).map((section) => (
                 <Link
                   key={section.key}
@@ -121,13 +127,13 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom copyright and attribution bar */}
-        <div className="mt-12 pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
+        <div className="mt-14 pt-6 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
           <p>
             © {currentYear} {siteConfig.name} Contributors. Free and open-source forever.
           </p>
           <div className="flex items-center gap-4">
             <span>Built with Next.js & Fumadocs</span>
-            <Link href="/sitemap.xml" className="hover:text-slate-700 dark:hover:text-slate-300">
+            <Link href="/sitemap.xml" className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors">
               Sitemap
             </Link>
           </div>

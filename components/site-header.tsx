@@ -44,9 +44,9 @@ export function SiteHeader() {
   return (
     <header
       role="banner"
-      className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/90 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/70 transition-colors"
+      className="sticky top-0 z-40 w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-950/60 transition-colors"
     >
-      <div className="container-site flex h-14 items-center justify-between gap-4">
+      <div className="container-site flex h-16 items-center justify-between gap-4">
         {/* Left: Brand Logo & Title */}
         <div className="flex items-center gap-6">
           <Link
@@ -54,7 +54,7 @@ export function SiteHeader() {
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1"
             aria-label={`${siteConfig.name} Homepage`}
           >
-            <div className="flex items-center justify-center size-8 rounded-lg bg-blue-600 text-white shadow-sm shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
+            <div className="relative flex items-center justify-center size-8 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-300">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -83,7 +83,7 @@ export function SiteHeader() {
           {/* Center: Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 text-sm font-medium"
+            className="hidden md:flex items-center gap-0.5 text-sm font-medium"
           >
             {contentSections.map((section) => {
               const isActive = pathname.startsWith(section.href);
@@ -92,10 +92,10 @@ export function SiteHeader() {
                   key={section.key}
                   href={section.href}
                   className={cn(
-                    "px-3 py-1.5 rounded-md transition-colors",
+                    "px-3 py-1.5 rounded-lg transition-all duration-200",
                     isActive
-                      ? "bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-semibold"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/60 dark:hover:bg-slate-800/50"
+                      ? "bg-blue-500/10 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400 font-semibold"
+                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100/80 dark:hover:bg-slate-800/50"
                   )}
                 >
                   {section.label}
@@ -124,7 +124,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             aria-label="OpenDevDocs on GitHub (opens in new tab)"
             title="GitHub Repository"
-            className="inline-flex items-center justify-center size-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
+            className="inline-flex items-center justify-center size-9 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
           >
             <GithubIcon className="size-4" aria-hidden="true" />
           </a>
@@ -139,7 +139,7 @@ export function SiteHeader() {
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            className="inline-flex md:hidden items-center justify-center size-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="inline-flex md:hidden items-center justify-center size-9 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             {mobileMenuOpen ? (
               <X className="size-4.5" aria-hidden="true" />
@@ -157,7 +157,7 @@ export function SiteHeader() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
-          className="fixed inset-x-0 top-14 bottom-0 z-50 md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 overflow-y-auto p-4 flex flex-col justify-between"
+          className="fixed inset-x-0 top-16 bottom-0 z-50 md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-200/50 dark:border-slate-800/50 overflow-y-auto p-4 flex flex-col justify-between"
         >
           <div className="space-y-4">
             <div className="pb-2">
@@ -177,7 +177,7 @@ export function SiteHeader() {
                     href={section.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
-                      "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors",
+                      "flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all duration-200",
                       isActive
                         ? "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-semibold"
                         : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900"
@@ -198,12 +198,12 @@ export function SiteHeader() {
             </nav>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <div className="pt-6 mt-6 border-t border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
             <a
               href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-slate-100"
+              className="flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
             >
               <GithubIcon className="size-4" />
               <span>GitHub Repository</span>
