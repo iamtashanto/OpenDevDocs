@@ -20,6 +20,10 @@ lastVerified: "2026-09-30"
 
 # Developer Learning Paths
 
+<RoadmapView />
+
+---
+
 OpenDevDocs Learning Paths are structured, milestone-driven curriculums designed to take developers from fundamentals to production-grade engineering. Every milestone links directly to relevant OpenDevDocs guides, command references, common error troubleshooting articles, and practical deployment recipes.
 
 ---

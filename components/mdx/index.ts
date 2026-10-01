@@ -31,3 +31,4 @@ export {
   ExpandableDetails,
   type ExpandableDetailsProps,
 } from "./expandable-details";
+export { RoadmapView } from "./roadmap-flow";

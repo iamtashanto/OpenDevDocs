@@ -86,6 +86,7 @@ export default function RootLayout({
               ["🍳 Production Recipes", "/recipes"],
               ["🗺️ Developer Roadmaps", "/roadmaps"],
               ["🛠️ Developer Tools & Git", "/tools"],
+              ["⚖️ Tech VS Comparisons", "/vs"],
             ],
           }}
         >

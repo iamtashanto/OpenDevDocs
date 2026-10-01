@@ -53,11 +53,11 @@ export function SearchButton({ className, variant = "full" }: SearchButtonProps)
       onClick={() => setOpenSearch(true)}
       aria-label="Search documentation (Press ⌘K or Ctrl+K)"
       className={cn(
-        "group relative flex items-center justify-between w-full max-w-xs h-9 px-3 text-xs rounded-lg border",
+        "group relative flex items-center justify-between w-full h-9 px-3 text-xs rounded-lg border",
         "border-slate-200 dark:border-slate-800/90 bg-slate-50/80 dark:bg-slate-900/80",
         "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200",
         "hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/90",
-        "transition-all shadow-sm select-none",
+        "transition-all shadow-sm select-none cursor-pointer",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950",
         className
       )}

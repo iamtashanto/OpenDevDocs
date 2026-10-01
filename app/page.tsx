@@ -15,8 +15,10 @@ import {
   Users,
   Star,
   Globe,
+  Scale,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { comparisonList } from "@/lib/vs-data";
 import {
   homepageCategories,
   homepageLearningPaths,
@@ -177,8 +179,8 @@ export default function HomePage() {
             </p>
 
             {/* Search Trigger */}
-            <div className="fade-in-up stagger-4 max-w-xl mx-auto mb-10">
-              <SearchButton variant="full" className="w-full h-14 px-5 text-base rounded-2xl shadow-xl shadow-blue-500/8 border-slate-200/80 dark:border-slate-700/60 bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm" />
+            <div className="fade-in-up stagger-4 max-w-xl mx-auto mb-10 flex justify-center">
+              <SearchButton variant="full" className="w-full max-w-lg h-14 px-5 text-base rounded-2xl shadow-xl shadow-blue-500/8 border-slate-200/80 dark:border-zinc-800 bg-white/90 dark:bg-[#0c0c0e]/90 backdrop-blur-sm mx-auto" />
             </div>
 
             {/* Hero CTAs */}
@@ -387,6 +389,71 @@ export default function HomePage() {
                 <RoadmapCard key={path.id} item={path} />
               ))}
             </div>
+          </div>
+        </section>
+
+        <hr className="section-divider" aria-hidden="true" />
+
+        {/* ── Section 6: Head-to-Head Technology VS Comparisons ── */}
+        <section
+          aria-labelledby="vs-heading"
+          className="container-site py-20 sm:py-28"
+        >
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full border border-indigo-500/15 bg-indigo-500/5 dark:bg-indigo-500/10">
+                <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                  Head-to-Head Architecture
+                </span>
+              </div>
+              <h2
+                id="vs-heading"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+              >
+                Technology VS Comparisons
+              </h2>
+            </div>
+            <Link
+              href="/vs"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline underline-offset-4"
+            >
+              <span>Explore all matchups</span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {comparisonList.slice(0, 3).map((vsItem) => (
+              <Link
+                key={vsItem.slug}
+                href={`/vs/${vsItem.slug}`}
+                className="group flex flex-col justify-between p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-[#0c0c0e] hover:border-indigo-500/50 hover:shadow-xl transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-mono font-semibold uppercase px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+                      {vsItem.category}
+                    </span>
+                    <span className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                      Compare <ArrowRight className="size-3" />
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    {vsItem.title}
+                  </h3>
+
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 line-clamp-2 leading-relaxed">
+                    {vsItem.verdict}
+                  </p>
+                </div>
+
+                <div className="mt-5 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                  <span>{vsItem.matrix.length} Matrix Points</span>
+                  <span>Side-by-Side Code</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 

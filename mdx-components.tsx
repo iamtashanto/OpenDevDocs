@@ -28,6 +28,7 @@ import {
   VersionBadge,
   KeyboardShortcut,
   ExpandableDetails,
+  RoadmapView,
 } from "@/components/mdx";
 import { Badge, Button, Kbd } from "@/components/ui";
 
@@ -56,6 +57,7 @@ export const globalMdxComponents: MDXComponents = {
   VersionBadge,
   KeyboardShortcut,
   ExpandableDetails,
+  RoadmapView,
   Badge,
   Button,
   Kbd,

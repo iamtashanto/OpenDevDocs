@@ -73,6 +73,14 @@ export const contentSections = [
     description: "Guides for the tools in your workflow.",
     color: "rose",
   },
+  {
+    key: "vs",
+    label: "VS",
+    href: "/vs",
+    icon: "⚖️",
+    description: "Head-to-head technology and architecture comparisons.",
+    color: "indigo",
+  },
 ] as const;
 
 export type ContentSectionKey = (typeof contentSections)[number]["key"];
